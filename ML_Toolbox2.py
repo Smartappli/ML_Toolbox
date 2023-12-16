@@ -237,6 +237,19 @@ def run():
         models_to_compare.append("lr_cds_dt")
     if models["ts_en_cds_dt"]:
         models_to_compare.append("en_cds_dt")
+    if models["ts_ridge_cds_dt"]:
+        models_to_compare.append("ridge_cds_dt")
+    if models["ts_lasso_cds_dt"]:
+        models_to_compare.append("lasso_cds_dt")
+    if models["ts_lar_cds_dt"]:
+        models_to_compare.append("lar_cds_dt")
+    if models["ts_llar_cds_dt"]:
+        models_to_compare.append("llar_cds_dt")
+    if models["ts_br_cds_dt"]:
+        models_to_compare.append("br_cds_dt")
+    if models["ts_huber_cds_dt"]:
+        models_to_compare.append("huber_cds_dt")
+
 
 # Show the window
 root.mainloop()
