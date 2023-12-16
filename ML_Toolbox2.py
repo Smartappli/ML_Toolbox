@@ -11,6 +11,7 @@ import pycaret
 
 variables = dict()
 models = dict()
+models_to_compare = []
 
 root = tk.Tk()
 root.title('Ai Toolbox - Machine Learning - Time Series Analysis')
@@ -201,6 +202,41 @@ ts_catboost_cds_dt.grid(row=8, column=0, sticky=(tk.W + tk.E))
 ttk.Button(ts_info, text="Select All", command=selectAllTS).grid(row=8, column=2, padx=5, pady=5, sticky=(tk.W + tk.E))
 ttk.Button(ts_info, text="unselect All", command=unselectAllTS).grid(row=8, column=3, padx=5, pady=5,
                                                                      sticky=(tk.W + tk.E))
+
+
+def run():
+    if models["ts_naive"]:
+        models_to_compare.append("naive")
+    if models["ts_grand_means"]:
+        models_to_compare.append("grand_mean")
+    if models["ts_snaive"]:
+        models_to_compare.append("snaive")
+    if models["ts_polytrend"]:
+        models_to_compare.append("polytrend")
+    if models["ts_arima"]:
+        models_to_compare.append("arima")
+    if models["ts_auto_arima"]:
+        models_to_compare.append("auto_arima")
+    if models["ts_exp_smooth"]:
+        models_to_compare.append("exp_smooth")
+    if models["ts_ets"]:
+        models_to_compare.append("ets")
+    if models["ts_theta"]:
+        models_to_compare.append("theta")
+    if models["ts_stlf"]:
+        models_to_compare.append("stlf")
+    if models["ts_croston"]:
+        models_to_compare.append("croston")
+    if models["ts_bats"]:
+        models_to_compare.append("bats")
+    if models["ts_tbats"]:
+        models_to_compare.append("tbats")
+    if models["ts_prophet"]:
+        models_to_compare.append("prophet")
+    if models["ts_lr_cds_dt"]:
+        models_to_compare.append("lr_cds_dt")
+    if models["ts_en_cds_dt"]:
+        models_to_compare.append("en_cds_dt")
 
 # Show the window
 root.mainloop()
