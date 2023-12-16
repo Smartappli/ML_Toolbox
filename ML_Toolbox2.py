@@ -272,5 +272,6 @@ def run():
     if models["ts_catboost_cds_dt"]:
         models_to_compare.append("catboost_cds_dt")
 
+
 # Show the window
 root.mainloop()
