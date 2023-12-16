@@ -249,7 +249,28 @@ def run():
         models_to_compare.append("br_cds_dt")
     if models["ts_huber_cds_dt"]:
         models_to_compare.append("huber_cds_dt")
-
+    if models["ts_par_cds_dt"]:
+        models_to_compare.append("par_cds_dt")
+    if models["ts_omp_cds_dt"]:
+        models_to_compare.append("omp_cds_dt")
+    if models["ts_knn_cds_dt"]:
+        models_to_compare.append("knn_cds_dt")
+    if models["ts_dt_cds_dt"]:
+        models_to_compare.append("dt_cds_dt")
+    if models["ts_rf_cds_dt"]:
+        models_to_compare.append("rf_cds_dt")
+    if models["ts_et_cds_dt"]:
+        models_to_compare.append("et_cds_dt")
+    if models["ts_gbr_cds_dt"]:
+        models_to_compare.append("gbr_cds_dt")
+    if models["ts_ada_cds_dt"]:
+        models_to_compare.append("ada_cds_dt")
+    if models["ts_xgboost_cds_dt"]:
+        models_to_compare.append("xgboost_cds_dt")
+    if models["ts_lightgbm_cds_dt"]:
+        models_to_compare.append("lightgbm_cds_dt")
+    if models["ts_catboost_cds_dt"]:
+        models_to_compare.append("catboost_cds_dt")
 
 # Show the window
 root.mainloop()
