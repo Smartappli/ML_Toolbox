@@ -8,6 +8,7 @@ Created on Wed Nov  1 22:45:19 2023
 import tkinter as tk
 from tkinter import ttk
 
+
 variables = dict()
 models1 = dict()
 models2 = dict()
