@@ -7,6 +7,7 @@ Created on Wed Nov 22 11:38:04 2023
 
 import tkinter as tk
 from tkinter import ttk
+import pycaret
 
 variables = dict()
 models = dict()

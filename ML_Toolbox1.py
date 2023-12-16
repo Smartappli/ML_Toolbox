@@ -7,11 +7,13 @@ Created on Wed Nov  1 22:45:19 2023
 
 import tkinter as tk
 from tkinter import ttk
-
+import pycaret
 
 variables = dict()
 models1 = dict()
+models1_to_compare = []
 models2 = dict()
+models2_to_compare = []
 
 root = tk.Tk()
 root.title('Ai Toolbox - Machine Learning - Supervised Learning')
@@ -187,6 +189,24 @@ ttk.Button(regression_info, text="Select All", command=selectAllRegression).grid
 ttk.Button(regression_info, text="Unselect All", command=unselectAllRegression).grid(row=8, column=3, padx=5, pady=5,
                                                                                      sticky=(tk.W + tk.E))
 
+
+def run1():
+    if models1["regression_lr"]:
+        models1_to_compare.append("lr")
+    if models1["regression_lasso"]:
+        models1_to_compare.append("lasso")
+    if models1["regression_ridge"]:
+        models1_to_compare.append("ridge")
+    if models1["regression_en"]:
+        models1_to_compare.append("en")
+    if models1["regression_lar"]:
+        models1_to_compare.append("lar")
+    if models1["regression_llar"]:
+        models1_to_compare.append("llar")
+    if models1["regression_omp"]:
+        models1_to_compare.append("omp")
+    if models1["regression_br"]:
+        models1_to_compare.append("br")
 
 def selectAllClassification():
     for i in models2.keys():
