@@ -11,7 +11,9 @@ import pycaret
 
 variables = dict()
 models1 = dict()
+models1_to_compare = []
 models2 = dict()
+models2_to_compare = []
 
 root = tk.Tk()
 root.title('Ai Toolbox - Machine Learning - Time Series Analysis')
@@ -86,6 +88,26 @@ ttk.Button(clustering_info, text="Select All", command=selectAllClustering).grid
                                                                                  sticky=(tk.W + tk.E))
 ttk.Button(clustering_info, text="Unselect All", command=unselectAllClustering).grid(row=8, column=3, padx=5, pady=5,
                                                                                      sticky=(tk.W + tk.E))
+
+def run1():
+    if models1["clustering_kmeans"]:
+        models1_to_compare.append("kmeans")
+    if models1["clustering_ap"]:
+        models1_to_compare.append("ap")
+    if models1["clustering_meanshift"]:
+        models1_to_compare.append("meanshift")
+    if models1["clustering_sc"]:
+        models1_to_compare.append("sc")
+    if models1["clustering_hclust"]:
+        models1_to_compare.append("hclust")
+    if models1["clustering_dbscan"]:
+        models1_to_compare.append("dbscan")
+    if models1["clustering_optics"]:
+        models1_to_compare.append("optics")
+    if models1["clustering_birch"]:
+        models1_to_compare.append("birch")
+    if models1["clustering_kmodes"]:
+        models1_to_compare.append("knodes")
 
 
 def selectAllAD():
@@ -165,6 +187,34 @@ ad_sos.grid(row=2, column=3, sticky=(tk.W + tk.E))
 ttk.Button(ad_info, text="Select All", command=selectAllAD).grid(row=3, column=2, padx=5, pady=5, sticky=(tk.W + tk.E))
 ttk.Button(ad_info, text="Unselect All", command=unselectAllAD).grid(row=3, column=3, padx=5, pady=5,
                                                                      sticky=(tk.W + tk.E))
+
+
+def run2():
+    if models2["ap_abod"]:
+        models2_to_compare.append("abod")
+    if models2["ad_cluster"]:
+        models2_to_compare.append("cluster")
+    if models2["ad_cof"]:
+        models2_to_compare.append("cof")
+    if models2["ad_iforest"]:
+        models2_to_compare.append("iforest")
+    if models2["ad_histogram"]:
+        models2_to_compare.append("histogram")
+    if models2["ad_knn"]:
+        models2_to_compare.append("knn")
+    if models2["ad_lof"]:
+        models2_to_compare.append("lof")
+    if models2["ad_svm"]:
+        models2_to_compare.append("svm")
+    if models2["ad_pca"]:
+        models2_to_compare.append("pca")
+    if models2["ad_mcd"]:
+        models2_to_compare.append("mcd")
+    if models2["ad_sod"]:
+        models2_to_compare.append("sod")
+    if models2["ad_sos"]:
+        models2_to_compare.append("sos")
+
 
 # Show the window
 root.mainloop()
