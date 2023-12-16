@@ -89,6 +89,7 @@ ttk.Button(clustering_info, text="Select All", command=selectAllClustering).grid
 ttk.Button(clustering_info, text="Unselect All", command=unselectAllClustering).grid(row=8, column=3, padx=5, pady=5,
                                                                                      sticky=(tk.W + tk.E))
 
+
 def run1():
     if models1["clustering_kmeans"]:
         models1_to_compare.append("kmeans")

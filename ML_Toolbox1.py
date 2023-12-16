@@ -8,6 +8,11 @@ Created on Wed Nov  1 22:45:19 2023
 import tkinter as tk
 from tkinter import ttk
 import pycaret
+from pycaret.datasets import get_data
+from pycaret.classification import *
+
+data = get_data('diabetes')
+s = setup(data, target = 'Class variable', session_id = 123)
 
 variables = dict()
 models1 = dict()
@@ -25,13 +30,13 @@ mc.columnconfigure(0, weight=1)
 
 
 def selectAllRegression():
-    for i in models1.keys():
-        models1[i].set(1)
+    for i1 in models1.keys():
+        models1[i1].set(1)
 
 
 def unselectAllRegression():
-    for i in models1.keys():
-        models1[i].set(0)
+    for i2 in models1.keys():
+        models1[i2].set(0)
 
 
 regression_info = ttk.LabelFrame(mc, text='Regression')
@@ -252,13 +257,14 @@ def run1():
 
 
 def selectAllClassification():
-    for i in models2.keys():
-        models2[i].set(1)
+    for i3 in models2.keys():
+        models2[i3].set(1)
+        run2()
 
 
 def unselectAllClassification():
-    for i in models2.keys():
-        models2[i].set(0)
+    for i4 in models2.keys():
+        models2[i4].set(0)
 
 
 classification_info = ttk.LabelFrame(mc, text='Classification')
@@ -399,14 +405,17 @@ def run2():
         models2_to_compare.append("lda")
     if models2["classification_et"]:
         models2_to_compare.append("et")
-    if models2["classification_xgboost"]:
-        models2_to_compare.append("xgbooost")
-    if models2["classification_lightgbm"]:
-        models2_to_compare.append("lightgbm")
-    if models2["classification_catboost"]:
-        models2_to_compare.append("catboost")
+    # if models2["classification_xgboost"]:
+        # models2_to_compare.append("xgboost")
+    # if models2["classification_lightgbm"]:
+    #    models2_to_compare.append("lightgbm")
+    # if models2["classification_catboost"]:
+    #    models2_to_compare.append("catboost")
     if models2["classification_dummy"]:
         models2_to_compare.append("dummy")
+
+    compare_classification_models = s.compare_models(include=models2_to_compare)
+    print(compare_classification_models)
 
 
 # Show the window
