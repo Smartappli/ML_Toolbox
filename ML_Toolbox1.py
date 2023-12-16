@@ -207,6 +207,49 @@ def run1():
         models1_to_compare.append("omp")
     if models1["regression_br"]:
         models1_to_compare.append("br")
+    if models1["regression_ard"]:
+        models1_to_compare.append("ard")
+    if models1["regression_par"]:
+        models1_to_compare.append("par")
+    if models1["regression_ransac"]:
+        models1_to_compare.append("ransac")
+    if models1["regression_tr"]:
+        models1_to_compare.append("tr")
+    if models1["regression_huber"]:
+        models1_to_compare.append("huber")
+    if models1["regression_kr"]:
+        models1_to_compare.append("kr")
+    if models1["regression_svm"]:
+        models1_to_compare.append("svm")
+    if models1["regression_knn"]:
+        models1_to_compare.append("knn")
+    if models1["regression_dt"]:
+        models1_to_compare.append("dt")
+    if models1["regression_rf"]:
+        models1_to_compare.append("rf")
+    if models1["regression_et"]:
+        models1_to_compare.append("et")
+    if models1["regression_ada"]:
+        models1_to_compare.append("ada")
+    if models1["regression_gbr"]:
+        models1_to_compare.append("gbr")
+    if models1["regression_mlp"]:
+        models1_to_compare.append("nlp")
+    if models1["regression_xgboost"]:
+        models1_to_compare.append("xgboost")
+    if models1["regression_lightgbm"]:
+        models1_to_compare.append("lightgdm")
+    if models1["regression_catboost"]:
+        models1_to_compare.append("catboost")
+    if models1["regression_dummy"]:
+        models1_to_compare.append("dummy")
+    if models1["regression_bagging"]:
+        models1_to_compare.append("bagging")
+    if models1["regression_stacking"]:
+        models1_to_compare.append("stacking")
+    if models1["regression_voting"]:
+        models1_to_compare.append("voting")
+
 
 def selectAllClassification():
     for i in models2.keys():
@@ -323,6 +366,48 @@ ttk.Button(classification_info, text="Select All", command=selectAllClassificati
 ttk.Button(classification_info, text="Unselect All", command=unselectAllClassification).grid(row=5, column=3, padx=5,
                                                                                              pady=5,
                                                                                              sticky=(tk.W + tk.E))
+
+
+def run2():
+    if models2["classification_lr"]:
+        models2_to_compare.append("lr")
+    if models2["classification_knn"]:
+        models2_to_compare.append("knn")
+    if models2["classification_nb"]:
+        models2_to_compare.append("nb")
+    if models2["classification_dt"]:
+        models2_to_compare.append("dt")
+    if models2["classification_svm"]:
+        models2_to_compare.append("svm")
+    if models2["classification_rbfsvm"]:
+        models2_to_compare.append("rbfsvm")
+    if models2["classification_gpc"]:
+        models2_to_compare.append("gpc")
+    if models2["classification_mlp"]:
+        models2_to_compare.append("mlp")
+    if models2["classification_ridge"]:
+        models2_to_compare.append("ridge")
+    if models2["classification_rf"]:
+        models2_to_compare.append("rf")
+    if models2["classification_qda"]:
+        models2_to_compare.append("qda")
+    if models2["classification_ada"]:
+        models2_to_compare.append("ada")
+    if models2["classification_gbc"]:
+        models2_to_compare.append("gbc")
+    if models2["classification_lda"]:
+        models2_to_compare.append("lda")
+    if models2["classification_et"]:
+        models2_to_compare.append("et")
+    if models2["classification_xgboost"]:
+        models2_to_compare.append("xgbooost")
+    if models2["classification_lightgbm"]:
+        models2_to_compare.append("lightgbm")
+    if models2["classification_catboost"]:
+        models2_to_compare.append("catboost")
+    if models2["classification_dummy"]:
+        models2_to_compare.append("dummy")
+
 
 # Show the window
 root.mainloop()
