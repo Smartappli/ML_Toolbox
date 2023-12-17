@@ -13,7 +13,7 @@
 
 ## Regression & Classification
 
-### Regession supporteed models
+### Regession supported models
 
 - Linear Regression (lr)
 - Lasso Regression (lasso)
@@ -47,8 +47,8 @@
 
 ### Classification supported models
 
--
--
+- Logistic Regression (lr)
+- K Neightbors Classifier (knn)
 
 ### Execution
 
