@@ -93,8 +93,55 @@
 - Elastic Net w/ Cond. Deseasonalize & Detrending (en_cds_dt)
 - Ridge w/ Cond. Deseasonalize & Detrending (ridge_cds_dt)
 - Lasso w/ Cond. Deseasonalize & Detrending (lasso_cds_dt)
-- 
+- Least Angular Regressor w/ Cond. Deseasonalize & Detrending (lar_cds_dt)
+- Lasso Least Angular Regressor w/ Cond. Deseasonalize & Detrending (llar_cds_dt)
+- Bayesian Ridge w/ Cond. Deseasonalize & Detrending (bs_cds_dt)
+- Huber w/ Cond. Deseasonalize & Detrending (huber_cds_dt)
+- Passive Aggressive w/ Cond. Deseasonalize & Detrending (par_cds_dt)
+- Orthogonal Matching Pursuit w/ Cond. Deseasonalize & Detrending (omp_cds_dt)
+- K Neighbors w/ Cond. Deseasonalize & Detrending (knn_cds_dt)
+- Decision Tree w/ Cond. Deseasonalize & Detrending (dt_cds_dt)
+- Random Forest w/ Cond. Deseasonalize & Detrending (rf_cds_dt)
+- Extra Trees w/ Cond. Deseasonalize & Detrending (et_cds_dt)
+- Gradient Boosting w/ Cond. Deseasonalize & Detrending (gbr_cds_dt)
+- AdaBoost w/ Cond. Deseasonalize & Detrending (ada_cds_dt)
+- Extreme Gradient Boosting w/ Cond. Deseasonalize & Detrending (xgboost_cds_dt)
+- Light Gradient Boosting w/ Cond. Deseasonalize & Detrending (lightgbm_cds_dt)
+- CatBoost Regressor w/ Cond. Deseasonalize & Detrending (catboost_cds_dt)
 
 ### Execution
 
 - python ML_Toolbox2.py
+
+## Clustering & Anomaly Detection ( ML_Toolbox3.py )
+
+### Clustering supported models
+
+- K-Means Clustering (kmeans)
+- Affinity Propagation (ap)
+- Mean Shift Clustering (meanshift)
+- Spectral Clustering (sc)
+- Agglomerative Clustering (hclust)
+- Density-Based Spatial Clustering (dbscan)
+- OPTICS Clustering (optics)
+- Birch Clustering (birch)
+- K-Modes Clustering (kmodes)
+
+### Anomaly Detection Supported Models
+
+- Angle-base Outlier Detection (abod)
+- Clustering-Based Local Outlier (cluster)
+- Connectivity-Based Local Outlier (cof)
+- Isolation Forest (iforest)
+- Histogram-based Outlier Detection (histogram)
+- K-Nearest Neighbors Detector (knn)
+- Local Outlier Factor (lof)
+- One-class SVM detector (svm)
+- Principal Component Analysis (pca)
+- Minimum Covariance Determinant (mcd)
+- Subspace Outlier Detection (sod)
+- Stochastic Outlier Selection (sos)
+
+### Execution
+
+- python ML_Toolbox3.py
