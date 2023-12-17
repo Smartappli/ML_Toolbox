@@ -11,7 +11,7 @@
 - python -m pip install --upgrade pip
 - pip install -r requirements.txt
 
-## Regression & Classification (%M_Toolbox1.py)
+## Regression & Classification ( ML_Toolbox1.py )
 
 ### Regession supported models
 
