@@ -11,7 +11,7 @@
 - python -m pip install --upgrade pip
 - pip install -r requirements.txt
 
-## Regression & Classification
+## Regression & Classification (%M_Toolbox1.py)
 
 ### Regession supported models
 
@@ -49,6 +49,23 @@
 
 - Logistic Regression (lr)
 - K Neightbors Classifier (knn)
+- Gaussian Naive Bayes (nb)
+- Decision Tree Classifier (dt)
+- SVM - Linear Kernel (svm)
+- SVM - Radial Kernel (rbfsvm)
+- Gaussian Process Classifier (gpc)
+- MLP Classifier (mlp)
+- Ridge Classifier (ridge)
+- Random Forest Classifier (rf)
+- Quadratic Discriminant Analysis (qda)
+- Ada Boost Classifier (ada)
+- Grandient Boost Classifier (bgc)
+- Linear Discriminant Analysis (lda)
+- Extra Trees Classifier (et)
+- Extreme Gradient Boosting (xgboost)
+- light Gradient Boosting Machine (lightgbm)
+- CatBoost Classifier (catboost)
+- Dummy Classifier (dummy)
 
 ### Execution
 
