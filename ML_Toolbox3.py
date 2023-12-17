@@ -11,9 +11,7 @@ import pycaret
 
 variables = dict()
 models1 = dict()
-models1_to_compare = []
 models2 = dict()
-models2_to_compare = []
 
 root = tk.Tk()
 root.title('Ai Toolbox - Machine Learning - Time Series Analysis')
@@ -84,31 +82,35 @@ clustering_kmodes = ttk.Checkbutton(clustering_info, text="K-Modes Clustering (k
                                     variable=models1["clustering_kmodes"], onvalue=1, offvalue=0)
 clustering_kmodes.grid(row=2, column=0, sticky=(tk.W + tk.E))
 
-ttk.Button(clustering_info, text="Select All", command=selectAllClustering).grid(row=8, column=2, padx=5, pady=5,
-                                                                                 sticky=(tk.W + tk.E))
-ttk.Button(clustering_info, text="Unselect All", command=unselectAllClustering).grid(row=8, column=3, padx=5, pady=5,
-                                                                                     sticky=(tk.W + tk.E))
-
 
 def run1():
-    if models1["clustering_kmeans"]:
+    models1_to_compare = []
+    if models1["clustering_kmeans"].get():
         models1_to_compare.append("kmeans")
-    if models1["clustering_ap"]:
+    if models1["clustering_ap"].get():
         models1_to_compare.append("ap")
-    if models1["clustering_meanshift"]:
+    if models1["clustering_meanshift"].get():
         models1_to_compare.append("meanshift")
-    if models1["clustering_sc"]:
+    if models1["clustering_sc"].get():
         models1_to_compare.append("sc")
-    if models1["clustering_hclust"]:
+    if models1["clustering_hclust"].get():
         models1_to_compare.append("hclust")
-    if models1["clustering_dbscan"]:
+    if models1["clustering_dbscan"].get():
         models1_to_compare.append("dbscan")
-    if models1["clustering_optics"]:
+    if models1["clustering_optics"].get():
         models1_to_compare.append("optics")
-    if models1["clustering_birch"]:
+    if models1["clustering_birch"].get():
         models1_to_compare.append("birch")
-    if models1["clustering_kmodes"]:
+    if models1["clustering_kmodes"].get():
         models1_to_compare.append("knodes")
+
+
+ttk.Button(clustering_info, text="Select All", command=selectAllClustering).grid(row=8, column=0, padx=5, pady=5,
+                                                                                 sticky=(tk.W + tk.E))
+ttk.Button(clustering_info, text="Unselect All", command=unselectAllClustering).grid(row=8, column=1, padx=5, pady=5,
+                                                                                     sticky=(tk.W + tk.E))
+ttk.Button(clustering_info, text="Run comparison", command=run1).grid(row=8, column=3, padx=5, pady=5,
+                                                                      sticky=(tk.W + tk.E))
 
 
 def selectAllAD():
@@ -185,36 +187,38 @@ ad_sos = ttk.Checkbutton(ad_info, text="Stochastic Outlier Selection (sos)", var
                          offvalue=0)
 ad_sos.grid(row=2, column=3, sticky=(tk.W + tk.E))
 
+
+def run2():
+    models2_to_compare = []
+    if models2["ap_abod"].get():
+        models2_to_compare.append("abod")
+    if models2["ad_cluster"].get():
+        models2_to_compare.append("cluster")
+    if models2["ad_cof"].get():
+        models2_to_compare.append("cof")
+    if models2["ad_iforest"].get():
+        models2_to_compare.append("iforest")
+    if models2["ad_histogram"].get():
+        models2_to_compare.append("histogram")
+    if models2["ad_knn"].get():
+        models2_to_compare.append("knn")
+    if models2["ad_lof"].get():
+        models2_to_compare.append("lof")
+    if models2["ad_svm"].get():
+        models2_to_compare.append("svm")
+    if models2["ad_pca"].get():
+        models2_to_compare.append("pca")
+    if models2["ad_mcd"].get():
+        models2_to_compare.append("mcd")
+    if models2["ad_sod"].get():
+        models2_to_compare.append("sod")
+    if models2["ad_sos"].get():
+        models2_to_compare.append("sos")
+
 ttk.Button(ad_info, text="Select All", command=selectAllAD).grid(row=3, column=2, padx=5, pady=5, sticky=(tk.W + tk.E))
 ttk.Button(ad_info, text="Unselect All", command=unselectAllAD).grid(row=3, column=3, padx=5, pady=5,
                                                                      sticky=(tk.W + tk.E))
-
-
-def run2():
-    if models2["ap_abod"]:
-        models2_to_compare.append("abod")
-    if models2["ad_cluster"]:
-        models2_to_compare.append("cluster")
-    if models2["ad_cof"]:
-        models2_to_compare.append("cof")
-    if models2["ad_iforest"]:
-        models2_to_compare.append("iforest")
-    if models2["ad_histogram"]:
-        models2_to_compare.append("histogram")
-    if models2["ad_knn"]:
-        models2_to_compare.append("knn")
-    if models2["ad_lof"]:
-        models2_to_compare.append("lof")
-    if models2["ad_svm"]:
-        models2_to_compare.append("svm")
-    if models2["ad_pca"]:
-        models2_to_compare.append("pca")
-    if models2["ad_mcd"]:
-        models2_to_compare.append("mcd")
-    if models2["ad_sod"]:
-        models2_to_compare.append("sod")
-    if models2["ad_sos"]:
-        models2_to_compare.append("sos")
+ttk.Button(ad_info, text="Run comparison", command=run2).grid(row=3, column=3, padx=5, pady=5, sticky=(tk.W + tk.E))
 
 
 # Show the window

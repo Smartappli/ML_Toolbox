@@ -11,7 +11,6 @@ import pycaret
 
 variables = dict()
 models = dict()
-models_to_compare = []
 
 root = tk.Tk()
 root.title('Ai Toolbox - Machine Learning - Time Series Analysis')
@@ -199,78 +198,79 @@ ts_catboost_cds_dt = ttk.Checkbutton(ts_info,
                                      variable=models["ts_catboost_cds_dt"], onvalue=1, offvalue=0)
 ts_catboost_cds_dt.grid(row=8, column=0, sticky=(tk.W + tk.E))
 
-ttk.Button(ts_info, text="Select All", command=selectAllTS).grid(row=8, column=2, padx=5, pady=5, sticky=(tk.W + tk.E))
-ttk.Button(ts_info, text="unselect All", command=unselectAllTS).grid(row=8, column=3, padx=5, pady=5,
-                                                                     sticky=(tk.W + tk.E))
-
-
 def run():
-    if models["ts_naive"]:
+    models_to_compare = []
+    if models["ts_naive"].get():
         models_to_compare.append("naive")
-    if models["ts_grand_means"]:
+    if models["ts_grand_means"].get():
         models_to_compare.append("grand_mean")
-    if models["ts_snaive"]:
+    if models["ts_snaive"].get():
         models_to_compare.append("snaive")
-    if models["ts_polytrend"]:
+    if models["ts_polytrend"].get():
         models_to_compare.append("polytrend")
-    if models["ts_arima"]:
+    if models["ts_arima"].get():
         models_to_compare.append("arima")
-    if models["ts_auto_arima"]:
+    if models["ts_auto_arima"].get():
         models_to_compare.append("auto_arima")
-    if models["ts_exp_smooth"]:
+    if models["ts_exp_smooth"].get():
         models_to_compare.append("exp_smooth")
-    if models["ts_ets"]:
+    if models["ts_ets"].get():
         models_to_compare.append("ets")
-    if models["ts_theta"]:
+    if models["ts_theta"].get():
         models_to_compare.append("theta")
-    if models["ts_stlf"]:
+    if models["ts_stlf"].get():
         models_to_compare.append("stlf")
-    if models["ts_croston"]:
+    if models["ts_croston"].get():
         models_to_compare.append("croston")
-    if models["ts_bats"]:
+    if models["ts_bats"].get():
         models_to_compare.append("bats")
-    if models["ts_tbats"]:
+    if models["ts_tbats"].get():
         models_to_compare.append("tbats")
-    if models["ts_prophet"]:
+    if models["ts_prophet"].get():
         models_to_compare.append("prophet")
-    if models["ts_lr_cds_dt"]:
+    if models["ts_lr_cds_dt"].get():
         models_to_compare.append("lr_cds_dt")
-    if models["ts_en_cds_dt"]:
+    if models["ts_en_cds_dt"].get():
         models_to_compare.append("en_cds_dt")
-    if models["ts_ridge_cds_dt"]:
+    if models["ts_ridge_cds_dt"].get():
         models_to_compare.append("ridge_cds_dt")
-    if models["ts_lasso_cds_dt"]:
+    if models["ts_lasso_cds_dt"].get():
         models_to_compare.append("lasso_cds_dt")
-    if models["ts_lar_cds_dt"]:
+    if models["ts_lar_cds_dt"].get():
         models_to_compare.append("lar_cds_dt")
-    if models["ts_llar_cds_dt"]:
+    if models["ts_llar_cds_dt"].get():
         models_to_compare.append("llar_cds_dt")
-    if models["ts_br_cds_dt"]:
+    if models["ts_br_cds_dt"].get():
         models_to_compare.append("br_cds_dt")
-    if models["ts_huber_cds_dt"]:
+    if models["ts_huber_cds_dt"].get():
         models_to_compare.append("huber_cds_dt")
-    if models["ts_par_cds_dt"]:
+    if models["ts_par_cds_dt"].get():
         models_to_compare.append("par_cds_dt")
-    if models["ts_omp_cds_dt"]:
+    if models["ts_omp_cds_dt"].get():
         models_to_compare.append("omp_cds_dt")
-    if models["ts_knn_cds_dt"]:
+    if models["ts_knn_cds_dt"].get():
         models_to_compare.append("knn_cds_dt")
-    if models["ts_dt_cds_dt"]:
+    if models["ts_dt_cds_dt"].get():
         models_to_compare.append("dt_cds_dt")
-    if models["ts_rf_cds_dt"]:
+    if models["ts_rf_cds_dt"].get():
         models_to_compare.append("rf_cds_dt")
-    if models["ts_et_cds_dt"]:
+    if models["ts_et_cds_dt"].get():
         models_to_compare.append("et_cds_dt")
-    if models["ts_gbr_cds_dt"]:
+    if models["ts_gbr_cds_dt"].get():
         models_to_compare.append("gbr_cds_dt")
-    if models["ts_ada_cds_dt"]:
+    if models["ts_ada_cds_dt"].get():
         models_to_compare.append("ada_cds_dt")
-    if models["ts_xgboost_cds_dt"]:
+    if models["ts_xgboost_cds_dt"].get():
         models_to_compare.append("xgboost_cds_dt")
-    if models["ts_lightgbm_cds_dt"]:
+    if models["ts_lightgbm_cds_dt"].get():
         models_to_compare.append("lightgbm_cds_dt")
-    if models["ts_catboost_cds_dt"]:
+    if models["ts_catboost_cds_dt"].get():
         models_to_compare.append("catboost_cds_dt")
+
+ttk.Button(ts_info, text="Select All", command=selectAllTS).grid(row=8, column=0, padx=5, pady=5, sticky=(tk.W + tk.E))
+ttk.Button(ts_info, text="unselect All", command=unselectAllTS).grid(row=8, column=1, padx=5, pady=5,
+                                                                     sticky=(tk.W + tk.E))
+ttk.Button(ts_info, text="Run comparison", command=run).grid(row=8, column=3, padx=5, pady=5, sticky=(tk.W + tk.E))
 
 
 # Show the window

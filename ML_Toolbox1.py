@@ -7,18 +7,14 @@ Created on Wed Nov  1 22:45:19 2023
 
 import tkinter as tk
 from tkinter import ttk
-import pycaret
+# import pycaret
 from pycaret.datasets import get_data
 from pycaret.classification import *
-
-data = get_data('diabetes')
-s = setup(data, target = 'Class variable', session_id = 123)
+from pycaret.regression import *
 
 variables = dict()
 models1 = dict()
-models1_to_compare = []
 models2 = dict()
-models2_to_compare = []
 
 root = tk.Tk()
 root.title('Ai Toolbox - Machine Learning - Supervised Learning')
@@ -31,12 +27,12 @@ mc.columnconfigure(0, weight=1)
 
 def selectAllRegression():
     for i1 in models1.keys():
-        models1[i1].set(1)
+        models1[i1].set(True)
 
 
 def unselectAllRegression():
     for i2 in models1.keys():
-        models1[i2].set(0)
+        models1[i2].set(False)
 
 
 regression_info = ttk.LabelFrame(mc, text='Regression')
@@ -189,77 +185,96 @@ regression_voting = ttk.Checkbutton(regression_info, text="Voting Regressor (vot
                                     variable=models1["regression_voting"], onvalue=1, offvalue=0)
 regression_voting.grid(row=7, column=0, sticky=(tk.W + tk.E))
 
-ttk.Button(regression_info, text="Select All", command=selectAllRegression).grid(row=8, column=2, padx=5, pady=5,
-                                                                                 sticky=(tk.W + tk.E))
-ttk.Button(regression_info, text="Unselect All", command=unselectAllRegression).grid(row=8, column=3, padx=5, pady=5,
-                                                                                     sticky=(tk.W + tk.E))
-
 
 def run1():
-    if models1["regression_lr"]:
+    models1_to_compare = []
+    if models1["regression_lr"].get():
         models1_to_compare.append("lr")
-    if models1["regression_lasso"]:
+    if models1["regression_lasso"].get():
         models1_to_compare.append("lasso")
-    if models1["regression_ridge"]:
+    if models1["regression_ridge"].get():
         models1_to_compare.append("ridge")
-    if models1["regression_en"]:
+    if models1["regression_en"].get():
         models1_to_compare.append("en")
-    if models1["regression_lar"]:
+    if models1["regression_lar"].get():
         models1_to_compare.append("lar")
-    if models1["regression_llar"]:
+    if models1["regression_llar"].get():
         models1_to_compare.append("llar")
-    if models1["regression_omp"]:
+    if models1["regression_omp"].get():
         models1_to_compare.append("omp")
-    if models1["regression_br"]:
+    if models1["regression_br"].get():
         models1_to_compare.append("br")
-    if models1["regression_ard"]:
+    if models1["regression_ard"].get():
         models1_to_compare.append("ard")
-    if models1["regression_par"]:
+    if models1["regression_par"].get():
         models1_to_compare.append("par")
-    if models1["regression_ransac"]:
+    if models1["regression_ransac"].get():
         models1_to_compare.append("ransac")
-    if models1["regression_tr"]:
+    if models1["regression_tr"].get():
         models1_to_compare.append("tr")
-    if models1["regression_huber"]:
+    if models1["regression_huber"].get():
         models1_to_compare.append("huber")
-    if models1["regression_kr"]:
+    if models1["regression_kr"].get():
         models1_to_compare.append("kr")
-    if models1["regression_svm"]:
+    if models1["regression_svm"].get():
         models1_to_compare.append("svm")
-    if models1["regression_knn"]:
+    if models1["regression_knn"].get():
         models1_to_compare.append("knn")
-    if models1["regression_dt"]:
+    if models1["regression_dt"].get():
         models1_to_compare.append("dt")
-    if models1["regression_rf"]:
+    if models1["regression_rf"].get():
         models1_to_compare.append("rf")
-    if models1["regression_et"]:
+    if models1["regression_et"].get():
         models1_to_compare.append("et")
-    if models1["regression_ada"]:
+    if models1["regression_ada"].get():
         models1_to_compare.append("ada")
-    if models1["regression_gbr"]:
+    if models1["regression_gbr"].get():
         models1_to_compare.append("gbr")
-    if models1["regression_mlp"]:
-        models1_to_compare.append("nlp")
-    if models1["regression_xgboost"]:
-        models1_to_compare.append("xgboost")
-    if models1["regression_lightgbm"]:
-        models1_to_compare.append("lightgdm")
-    if models1["regression_catboost"]:
-        models1_to_compare.append("catboost")
-    if models1["regression_dummy"]:
+    # if models1["regression_mlp"]:
+    #    models1_to_compare.append("nlp")
+    # if models1["regression_xgboost"]:
+    #    models1_to_compare.append("xgboost")
+    # if models1["regression_lightgbm"]:
+    #    models1_to_compare.append("lightgdm")
+    # if models1["regression_catboost"]:
+    #    models1_to_compare.append("catboost")
+    if models1["regression_dummy"].get():
         models1_to_compare.append("dummy")
-    if models1["regression_bagging"]:
-        models1_to_compare.append("bagging")
-    if models1["regression_stacking"]:
-        models1_to_compare.append("stacking")
-    if models1["regression_voting"]:
-        models1_to_compare.append("voting")
+    # if models1["regression_bagging"]:
+    #    models1_to_compare.append("bagging")
+    # if models1["regression_stacking"]:
+    #    models1_to_compare.append("stacking")
+    # if models1["regression_voting"]:
+    #    models1_to_compare.append("voting")
+
+    data1 = get_data('insurance')
+    s = setup(data1, target='charges', session_id=123)
+
+    print(models1_to_compare)
+
+    best = compare_models(include=models1_to_compare)
+
+    # plot residuals
+    plot_model(best, plot='residuals')
+
+    # plot error
+    plot_model(best, plot='error')
+
+    # plot feature importance
+    plot_model(best, plot='feature')
+
+
+ttk.Button(regression_info, text="Select All", command=selectAllRegression).grid(row=8, column=0, padx=5, pady=5,
+                                                                                 sticky=(tk.W + tk.E))
+ttk.Button(regression_info, text="Unselect All", command=unselectAllRegression).grid(row=8, column=1, padx=5, pady=5,
+                                                                                     sticky=(tk.W + tk.E))
+ttk.Button(regression_info, text="Run Comparison", command=run1).grid(row=8, column=3, padx=5, pady=5,
+                                                                      sticky=(tk.W + tk.E))
 
 
 def selectAllClassification():
     for i3 in models2.keys():
         models2[i3].set(1)
-        run2()
 
 
 def unselectAllClassification():
@@ -367,56 +382,63 @@ classification_dummy = ttk.Checkbutton(classification_info, text="Dummy Classifi
                                        variable=models2["classification_dummy"], onvalue=1, offvalue=0)
 classification_dummy.grid(row=4, column=2, sticky=(tk.W + tk.E))
 
-ttk.Button(classification_info, text="Select All", command=selectAllClassification).grid(row=5, column=2, padx=5,
-                                                                                         pady=5, sticky=(tk.W + tk.E))
-ttk.Button(classification_info, text="Unselect All", command=unselectAllClassification).grid(row=5, column=3, padx=5,
-                                                                                             pady=5,
-                                                                                             sticky=(tk.W + tk.E))
-
 
 def run2():
-    if models2["classification_lr"]:
+    models2_to_compare = []
+    if models2["classification_lr"].get():
         models2_to_compare.append("lr")
-    if models2["classification_knn"]:
+    if models2["classification_knn"].get():
         models2_to_compare.append("knn")
-    if models2["classification_nb"]:
+    if models2["classification_nb"].get():
         models2_to_compare.append("nb")
-    if models2["classification_dt"]:
+    if models2["classification_dt"].get():
         models2_to_compare.append("dt")
-    if models2["classification_svm"]:
+    if models2["classification_svm"].get():
         models2_to_compare.append("svm")
-    if models2["classification_rbfsvm"]:
+    if models2["classification_rbfsvm"].get():
         models2_to_compare.append("rbfsvm")
-    if models2["classification_gpc"]:
+    if models2["classification_gpc"].get():
         models2_to_compare.append("gpc")
-    if models2["classification_mlp"]:
+    if models2["classification_mlp"].get():
         models2_to_compare.append("mlp")
-    if models2["classification_ridge"]:
+    if models2["classification_ridge"].get():
         models2_to_compare.append("ridge")
-    if models2["classification_rf"]:
+    if models2["classification_rf"].get():
         models2_to_compare.append("rf")
-    if models2["classification_qda"]:
+    if models2["classification_qda"].get():
         models2_to_compare.append("qda")
-    if models2["classification_ada"]:
+    if models2["classification_ada"].get():
         models2_to_compare.append("ada")
-    if models2["classification_gbc"]:
+    if models2["classification_gbc"].get():
         models2_to_compare.append("gbc")
-    if models2["classification_lda"]:
+    if models2["classification_lda"].get():
         models2_to_compare.append("lda")
-    if models2["classification_et"]:
+    if models2["classification_et"].get():
         models2_to_compare.append("et")
     # if models2["classification_xgboost"]:
-        # models2_to_compare.append("xgboost")
+    # models2_to_compare.append("xgboost")
     # if models2["classification_lightgbm"]:
     #    models2_to_compare.append("lightgbm")
     # if models2["classification_catboost"]:
     #    models2_to_compare.append("catboost")
-    if models2["classification_dummy"]:
+    if models2["classification_dummy"].get():
         models2_to_compare.append("dummy")
 
-    compare_classification_models = s.compare_models(include=models2_to_compare)
+    data2 = get_data('diabetes')
+    exp2 = ClassificationExperiment()
+    exp2.setup(data2, target='Class variable', session_id=123)
+
+    compare_classification_models = exp2.compare_models(include=models2_to_compare)
     print(compare_classification_models)
 
+
+ttk.Button(classification_info, text="Select All", command=selectAllClassification).grid(row=5, column=0, padx=5,
+                                                                                         pady=5, sticky=(tk.W + tk.E))
+ttk.Button(classification_info, text="Unselect All", command=unselectAllClassification).grid(row=5, column=1, padx=5,
+                                                                                             pady=5,
+                                                                                             sticky=(tk.W + tk.E))
+ttk.Button(classification_info, text="Run comparison", command=run2).grid(row=5, column=3, padx=5, pady=5,
+                                                                          sticky=(tk.E + tk.W))
 
 # Show the window
 root.mainloop()
