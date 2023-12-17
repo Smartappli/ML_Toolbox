@@ -83,6 +83,17 @@
 - Auto ARIMA (auto_arima)
 - Exponential Smoothing (exp_smooth)
 - ETS (ets)
+- Theta Forecaster (theta)
+- STLF (stlf)
+- Croston (croston)
+- BATS (bats)
+- TBATS (tbats)
+- Prophet (prophet)
+- Linear w/ Cond. Deseasonalize & Detrending (lr_cds_dt)
+- Elastic Net w/ Cond. Deseasonalize & Detrending (en_cds_dt)
+- Ridge w/ Cond. Deseasonalize & Detrending (ridge_cds_dt)
+- Lasso w/ Cond. Deseasonalize & Detrending (lasso_cds_dt)
+- 
 
 ### Execution
 
