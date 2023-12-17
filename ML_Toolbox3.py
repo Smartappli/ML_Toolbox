@@ -7,7 +7,9 @@ Created on Wed Nov 22 19:57:33 2023
 
 import tkinter as tk
 from tkinter import ttk
-import pycaret
+from pycaret.datasets import get_data
+from pycaret.clustering import *
+from pycaret.anomaly import *
 
 variables = dict()
 models1 = dict()
@@ -104,6 +106,8 @@ def run1():
     if models1["clustering_kmodes"].get():
         models1_to_compare.append("knodes")
 
+    data1 = get_data('jewellery')
+    s1 = setup(data1, session_id=123)
 
 ttk.Button(clustering_info, text="Select All", command=selectAllClustering).grid(row=8, column=0, padx=5, pady=5,
                                                                                  sticky=(tk.W + tk.E))
@@ -214,6 +218,9 @@ def run2():
         models2_to_compare.append("sod")
     if models2["ad_sos"].get():
         models2_to_compare.append("sos")
+
+    data2 = get_data('anomaly')
+    s = setup(data2, session_id=123)
 
 ttk.Button(ad_info, text="Select All", command=selectAllAD).grid(row=3, column=2, padx=5, pady=5, sticky=(tk.W + tk.E))
 ttk.Button(ad_info, text="Unselect All", command=unselectAllAD).grid(row=3, column=3, padx=5, pady=5,

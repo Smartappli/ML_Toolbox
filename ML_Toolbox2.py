@@ -7,7 +7,8 @@ Created on Wed Nov 22 11:38:04 2023
 
 import tkinter as tk
 from tkinter import ttk
-import pycaret
+from pycaret.datasets import get_data
+from pycaret.time_series import *
 
 variables = dict()
 models = dict()
@@ -266,6 +267,18 @@ def run():
         models_to_compare.append("lightgbm_cds_dt")
     if models["ts_catboost_cds_dt"].get():
         models_to_compare.append("catboost_cds_dt")
+
+    data = get_data('airline')
+    s = setup(data, fh=3, session_id=123)
+
+    compare_ts_models = compare_models(include=models_to_compare)
+
+    # plot forecast
+    plot_model(compare_ts_models, plot='forecast')
+
+    # residuals plot
+    plot_model(compare_ts_models, plot='residuals')
+
 
 ttk.Button(ts_info, text="Select All", command=selectAllTS).grid(row=8, column=0, padx=5, pady=5, sticky=(tk.W + tk.E))
 ttk.Button(ts_info, text="unselect All", command=unselectAllTS).grid(row=8, column=1, padx=5, pady=5,
