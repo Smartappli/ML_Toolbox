@@ -70,3 +70,14 @@
 ### Execution
 
 - python ML_Toolbox1.py
+
+## Time Series ( ML_Toolbox2.py )
+
+- Naive Forecaster (naive)
+- Grand Means Forecaster (grand_means)
+- Seasonal Naive Forecaster (snaive)
+- Polynomial Trend Forecaster (polytrend)
+- ARIMA (arima)
+- Auto ARIMA (auto_arima)
+- Exponential Smoothing (exp_smooth)
+- 
