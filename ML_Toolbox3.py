@@ -127,7 +127,7 @@ def unselectAllAD():
         models2[i].set(False)
 
 
-ad_info = ttk.LabelFrame(mc, text='Clustering')
+ad_info = ttk.LabelFrame(mc, text='Anomaly Detection')
 ad_info.grid(padx=5, pady=5, sticky=(tk.W + tk.E))
 for i in range(4):
     ad_info.columnconfigure(i, weight=1)
@@ -221,6 +221,8 @@ def run2():
 
     data2 = get_data('anomaly')
     s = setup(data2, session_id=123)
+
+
 
 ttk.Button(ad_info, text="Select All", command=selectAllAD).grid(row=3, column=2, padx=5, pady=5, sticky=(tk.W + tk.E))
 ttk.Button(ad_info, text="Unselect All", command=unselectAllAD).grid(row=3, column=3, padx=5, pady=5,
