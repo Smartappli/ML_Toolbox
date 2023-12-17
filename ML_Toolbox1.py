@@ -428,6 +428,8 @@ def run2():
     exp2 = ClassificationExperiment()
     exp2.setup(data2, target='Class variable', session_id=123)
 
+    print(models2_to_compare)
+
     compare_classification_models = exp2.compare_models(include=models2_to_compare)
     print(compare_classification_models)
 
