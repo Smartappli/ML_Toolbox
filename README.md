@@ -73,6 +73,8 @@
 
 ## Time Series ( ML_Toolbox2.py )
 
+### Time Series Supported Models
+
 - Naive Forecaster (naive)
 - Grand Means Forecaster (grand_means)
 - Seasonal Naive Forecaster (snaive)
@@ -80,4 +82,8 @@
 - ARIMA (arima)
 - Auto ARIMA (auto_arima)
 - Exponential Smoothing (exp_smooth)
-- 
+- ETS (ets)
+
+### Execution
+
+- python ML_Toolbox2.py
