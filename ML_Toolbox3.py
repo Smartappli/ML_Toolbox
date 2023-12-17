@@ -26,12 +26,12 @@ mc.columnconfigure(0, weight=1)
 
 def selectAllClustering():
     for i in models1.keys():
-        models1[i].set(1)
+        models1[i].set(True)
 
 
 def unselectAllClustering():
     for i in models1.keys():
-        models1[i].set(0)
+        models1[i].set(False)
 
 
 clustering_info = ttk.LabelFrame(mc, text='Clustering')
@@ -119,12 +119,12 @@ ttk.Button(clustering_info, text="Run comparison", command=run1).grid(row=8, col
 
 def selectAllAD():
     for i in models2.keys():
-        models2[i].set(1)
+        models2[i].set(True)
 
 
 def unselectAllAD():
     for i in models2.keys():
-        models2[i].set(0)
+        models2[i].set(False)
 
 
 ad_info = ttk.LabelFrame(mc, text='Clustering')

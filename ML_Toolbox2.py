@@ -24,12 +24,12 @@ mc.columnconfigure(0, weight=1)
 
 def selectAllTS():
     for i in models.keys():
-        models[i].set(1)
+        models[i].set(True)
 
 
 def unselectAllTS():
     for i in models.keys():
-        models[i].set(0)
+        models[i].set(False)
 
 
 ts_info = ttk.LabelFrame(mc, text='Time Series')
