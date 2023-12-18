@@ -35,155 +35,184 @@ def unselectAllRegression():
         models1[i2].set(False)
 
 
-regression_info = ttk.LabelFrame(mc, text='Regression')
-regression_info.grid(padx=5, pady=5, sticky=(tk.W + tk.E))
+regression_model = ttk.LabelFrame(mc, text='Regression Models')
+regression_model.grid(padx=5, pady=5, sticky=(tk.W + tk.E))
 for i in range(4):
-    regression_info.columnconfigure(i, weight=1)
+    regression_model.columnconfigure(i, weight=1)
 
 models1["regression_lr"] = tk.BooleanVar()
-regression_lr = ttk.Checkbutton(regression_info, text="Linear Regression (lr)", variable=models1["regression_lr"],
+regression_lr = ttk.Checkbutton(regression_model, text="Linear Regression (lr)", variable=models1["regression_lr"],
                                 onvalue=1, offvalue=0)
 regression_lr.grid(row=0, column=0, sticky=(tk.W + tk.E))
 
 models1["regression_lasso"] = tk.BooleanVar()
-regression_lasso = ttk.Checkbutton(regression_info, text="Lasso Regression (lasso)",
+regression_lasso = ttk.Checkbutton(regression_model, text="Lasso Regression (lasso)",
                                    variable=models1["regression_lasso"], onvalue=1, offvalue=0)
 regression_lasso.grid(row=0, column=1, sticky=(tk.W + tk.E))
 
 models1["regression_ridge"] = tk.BooleanVar()
-regression_ridge = ttk.Checkbutton(regression_info, text="Ridge Regression (ridge)",
+regression_ridge = ttk.Checkbutton(regression_model, text="Ridge Regression (ridge)",
                                    variable=models1["regression_ridge"], onvalue=1, offvalue=0)
 regression_ridge.grid(row=0, column=2, sticky=(tk.W + tk.E))
 
 models1["regression_en"] = tk.BooleanVar()
-regression_en = ttk.Checkbutton(regression_info, text="Elastic Net (en)", variable=models1["regression_en"], onvalue=1,
+regression_en = ttk.Checkbutton(regression_model, text="Elastic Net (en)", variable=models1["regression_en"], onvalue=1,
                                 offvalue=0)
 regression_en.grid(row=0, column=3, sticky=(tk.W + tk.E))
 
 models1["regression_lar"] = tk.BooleanVar()
-regression_lar = ttk.Checkbutton(regression_info, text="Least Angle Regression (lar)",
+regression_lar = ttk.Checkbutton(regression_model, text="Least Angle Regression (lar)",
                                  variable=models1["regression_lar"], onvalue=1, offvalue=0)
 regression_lar.grid(row=1, column=0, sticky=(tk.W + tk.E))
 
 models1["regression_llar"] = tk.BooleanVar()
-regression_llar = ttk.Checkbutton(regression_info, text="Lasso Least Angle Regression (llar)",
+regression_llar = ttk.Checkbutton(regression_model, text="Lasso Least Angle Regression (llar)",
                                   variable=models1["regression_llar"], onvalue=1, offvalue=0)
 regression_llar.grid(row=1, column=1, sticky=(tk.W + tk.E))
 
 models1["regression_omp"] = tk.BooleanVar()
-regression_omp = ttk.Checkbutton(regression_info, text="Orthogonal Matching Pursuit (omp)",
+regression_omp = ttk.Checkbutton(regression_model, text="Orthogonal Matching Pursuit (omp)",
                                  variable=models1["regression_omp"], onvalue=1, offvalue=0)
 regression_omp.grid(row=1, column=2, sticky=(tk.W + tk.E))
 
 models1["regression_br"] = tk.BooleanVar()
-regression_br = ttk.Checkbutton(regression_info, text="Bayesian Ridge (br)", variable=models1["regression_br"],
+regression_br = ttk.Checkbutton(regression_model, text="Bayesian Ridge (br)", variable=models1["regression_br"],
                                 onvalue=1, offvalue=0)
 regression_br.grid(row=1, column=3, sticky=(tk.W + tk.E))
 
 models1["regression_ard"] = tk.BooleanVar()
-regression_ard = ttk.Checkbutton(regression_info, text="Automatic Relevance Determination (ard)",
+regression_ard = ttk.Checkbutton(regression_model, text="Automatic Relevance Determination (ard)",
                                  variable=models1["regression_ard"], onvalue=1, offvalue=0)
 regression_ard.grid(row=2, column=0, sticky=(tk.W + tk.E))
 
 models1["regression_par"] = tk.BooleanVar()
-regression_par = ttk.Checkbutton(regression_info, text="Passive Aggressive Regressor (par)",
+regression_par = ttk.Checkbutton(regression_model, text="Passive Aggressive Regressor (par)",
                                  variable=models1["regression_par"], onvalue=1, offvalue=0)
 regression_par.grid(row=2, column=1, sticky=(tk.W + tk.E))
 
 models1["regression_ransac"] = tk.BooleanVar()
-regression_ransac = ttk.Checkbutton(regression_info, text="Random Sample Consensus (ransac)",
+regression_ransac = ttk.Checkbutton(regression_model, text="Random Sample Consensus (ransac)",
                                     variable=models1["regression_ransac"], onvalue=1, offvalue=0)
 regression_ransac.grid(row=2, column=2, sticky=(tk.W + tk.E))
 
 models1["regression_tr"] = tk.BooleanVar()
-regression_tr = ttk.Checkbutton(regression_info, text="TheilSen Regressor (tr)", variable=models1["regression_tr"],
+regression_tr = ttk.Checkbutton(regression_model, text="TheilSen Regressor (tr)", variable=models1["regression_tr"],
                                 onvalue=1, offvalue=0)
 regression_tr.grid(row=2, column=3, sticky=(tk.W + tk.E))
 
 models1["regression_huber"] = tk.BooleanVar()
-regression_huber = ttk.Checkbutton(regression_info, text="Huber Regressor (huber)",
+regression_huber = ttk.Checkbutton(regression_model, text="Huber Regressor (huber)",
                                    variable=models1["regression_huber"], onvalue=1, offvalue=0)
 regression_huber.grid(row=3, column=0, sticky=(tk.W + tk.E))
 
 models1["regression_kr"] = tk.BooleanVar()
-regression_kr = ttk.Checkbutton(regression_info, text="Kernel Ridge (kr)", variable=models1["regression_kr"], onvalue=1,
+regression_kr = ttk.Checkbutton(regression_model, text="Kernel Ridge (kr)", variable=models1["regression_kr"], onvalue=1,
                                 offvalue=0)
 regression_kr.grid(row=3, column=1, sticky=(tk.W + tk.E))
 
 models1["regression_svm"] = tk.BooleanVar()
-regression_svm = ttk.Checkbutton(regression_info, text="Support Vector Regression (svm)",
+regression_svm = ttk.Checkbutton(regression_model, text="Support Vector Regression (svm)",
                                  variable=models1["regression_svm"], onvalue=1, offvalue=0)
 regression_svm.grid(row=3, column=2, sticky=(tk.W + tk.E))
 
 models1["regression_knn"] = tk.BooleanVar()
-regression_knn = ttk.Checkbutton(regression_info, text="K Neighbors Regressor (knn)",
+regression_knn = ttk.Checkbutton(regression_model, text="K Neighbors Regressor (knn)",
                                  variable=models1["regression_knn"], onvalue=1, offvalue=0)
 regression_knn.grid(row=3, column=3, sticky=(tk.W + tk.E))
 
 models1["regression_dt"] = tk.BooleanVar()
-regression_dt = ttk.Checkbutton(regression_info, text="Decision Tree Regressor (dt)", variable=models1["regression_dt"],
+regression_dt = ttk.Checkbutton(regression_model, text="Decision Tree Regressor (dt)", variable=models1["regression_dt"],
                                 onvalue=1, offvalue=0)
 regression_dt.grid(row=4, column=0, sticky=(tk.W + tk.E))
 
 models1["regression_rf"] = tk.BooleanVar()
-regression_rf = ttk.Checkbutton(regression_info, text="Random Forest Regressor (rf)", variable=models1["regression_rf"],
+regression_rf = ttk.Checkbutton(regression_model, text="Random Forest Regressor (rf)", variable=models1["regression_rf"],
                                 onvalue=1, offvalue=0)
 regression_rf.grid(row=4, column=1, sticky=(tk.W + tk.E))
 
 models1["regression_et"] = tk.BooleanVar()
-regression_et = ttk.Checkbutton(regression_info, text="Extra Trees Regressor (et)", variable=models1["regression_et"],
+regression_et = ttk.Checkbutton(regression_model, text="Extra Trees Regressor (et)", variable=models1["regression_et"],
                                 onvalue=1, offvalue=0)
 regression_et.grid(row=4, column=2, sticky=(tk.W + tk.E))
 
 models1["regression_ada"] = tk.BooleanVar()
-regression_ada = ttk.Checkbutton(regression_info, text="AdaBoost Regressor (ada)", variable=models1["regression_ada"],
+regression_ada = ttk.Checkbutton(regression_model, text="AdaBoost Regressor (ada)", variable=models1["regression_ada"],
                                  onvalue=1, offvalue=0)
 regression_ada.grid(row=4, column=3, sticky=(tk.W + tk.E))
 
 models1["regression_gbr"] = tk.BooleanVar()
-regression_gbr = ttk.Checkbutton(regression_info, text="Gradient Boosting Regressor (gbr)",
+regression_gbr = ttk.Checkbutton(regression_model, text="Gradient Boosting Regressor (gbr)",
                                  variable=models1["regression_gbr"], onvalue=1, offvalue=0)
 regression_gbr.grid(row=5, column=0, sticky=(tk.W + tk.E))
 
 models1["regression_mlp"] = tk.BooleanVar()
-regression_mlp = ttk.Checkbutton(regression_info, text="MLP Regressor (mlp)", variable=models1["regression_mlp"],
+regression_mlp = ttk.Checkbutton(regression_model, text="MLP Regressor (mlp)", variable=models1["regression_mlp"],
                                  onvalue=1, offvalue=0)
 regression_mlp.grid(row=5, column=1, sticky=(tk.W + tk.E))
 
 models1["regression_xgboost"] = tk.BooleanVar()
-regression_xgboost = ttk.Checkbutton(regression_info, text="Extreme Gradient Boosting (xgboost)",
+regression_xgboost = ttk.Checkbutton(regression_model, text="Extreme Gradient Boosting (xgboost)",
                                      variable=models1["regression_xgboost"], onvalue=1, offvalue=0)
 regression_xgboost.grid(row=5, column=2, sticky=(tk.W + tk.E))
+regression_xgboost['state'] = 'disabled'
 
 models1["regression_lightgbm"] = tk.BooleanVar()
-regression_lightgbm = ttk.Checkbutton(regression_info, text="Light Gradient Boosting Machine (lightgbm)",
+regression_lightgbm = ttk.Checkbutton(regression_model, text="Light Gradient Boosting Machine (lightgbm)",
                                       variable=models1["regression_lightgbm"], onvalue=1, offvalue=0)
 regression_lightgbm.grid(row=5, column=3)
+regression_lightgbm['state'] = 'disabled'
 
 models1["regression_catboost"] = tk.BooleanVar()
-regression_catboost = ttk.Checkbutton(regression_info, text="CatBoost (catboost)",
+regression_catboost = ttk.Checkbutton(regression_model, text="CatBoost (catboost)",
                                       variable=models1["regression_catboost"], onvalue=1, offvalue=0)
 regression_catboost.grid(row=6, column=0, sticky=(tk.W + tk.E))
+regression_catboost['state'] = 'disabled'
 
 models1["regression_dummy"] = tk.BooleanVar()
-regression_dummy = ttk.Checkbutton(regression_info, text="Dummy Regressor (dummy)",
+regression_dummy = ttk.Checkbutton(regression_model, text="Dummy Regressor (dummy)",
                                    variable=models1["regression_dummy"], onvalue=1, offvalue=0)
 regression_dummy.grid(row=6, column=1, sticky=(tk.W + tk.E))
 
 models1["regression_bagging"] = tk.BooleanVar()
-regression_bagging = ttk.Checkbutton(regression_info, text="Bagging Regressor (bagging)",
+regression_bagging = ttk.Checkbutton(regression_model, text="Bagging Regressor (bagging)",
                                      variable=models1["regression_bagging"], onvalue=1, offvalue=0)
 regression_bagging.grid(row=6, column=2, sticky=(tk.W + tk.E))
+regression_bagging['state'] = 'disabled'
 
 models1["regression_stacking"] = tk.BooleanVar()
-regression_stacking = ttk.Checkbutton(regression_info, text="Stacking Regressor (stacking)",
+regression_stacking = ttk.Checkbutton(regression_model, text="Stacking Regressor (stacking)",
                                       variable=models1["regression_stacking"], onvalue=1, offvalue=0)
 regression_stacking.grid(row=6, column=3, sticky=(tk.W + tk.E))
+regression_stacking['state'] = 'disabled'
 
 models1["regression_voting"] = tk.BooleanVar()
-regression_voting = ttk.Checkbutton(regression_info, text="Voting Regressor (voting)",
+regression_voting = ttk.Checkbutton(regression_model, text="Voting Regressor (voting)",
                                     variable=models1["regression_voting"], onvalue=1, offvalue=0)
 regression_voting.grid(row=7, column=0, sticky=(tk.W + tk.E))
+regression_voting['state'] = 'disabled'
+
+
+regression_output = ttk.LabelFrame(mc, text='Output')
+regression_output.grid(padx=5, pady=5, sticky=(tk.W + tk.E))
+for i in range(4):
+    regression_output.columnconfigure(i, weight=1)
+
+models1["feature"] = tk.BooleanVar()
+regression_feature = ttk.Checkbutton(regression_output, text="Feature", variable=models1["feature"], onvalue=True, offvalue=False)
+regression_feature.grid(row=0, column=0, sticky=(tk.W + tk.E))
+
+models1["residuals"] = tk.BooleanVar()
+regression_residuals = ttk.Checkbutton(regression_output, text="Residuals", variable=models1["residuals"], onvalue=True, offvalue=False)
+regression_residuals.grid(row=0, column=1, sticky=(tk.W + tk.E))
+
+models1["error"] = tk.BooleanVar()
+regression_error = ttk.Checkbutton(regression_output, text="Error", variable=models1["error"], onvalue=True, offvalue=False)
+regression_error.grid(row=0, column=2, sticky=(tk.W + tk.E))
+
+
+regression_info = ttk.LabelFrame(mc, text='Information')
+regression_info.grid(padx=5, pady=5, sticky=(tk.W + tk.E))
+regression_info.columnconfigure(1, weight=1)
 
 
 def run1():
@@ -230,8 +259,8 @@ def run1():
         models1_to_compare.append("ada")
     if models1["regression_gbr"].get():
         models1_to_compare.append("gbr")
-    # if models1["regression_mlp"]:
-    #    models1_to_compare.append("nlp")
+    if models1["regression_mlp"]:
+        models1_to_compare.append("mlp")
     # if models1["regression_xgboost"]:
     #    models1_to_compare.append("xgboost")
     # if models1["regression_lightgbm"]:
@@ -247,6 +276,9 @@ def run1():
     # if models1["regression_voting"]:
     #    models1_to_compare.append("voting")
 
+    ttk.Label(regression_info, text="Selected Models: " + ", ".join(str(x) for x in models1_to_compare)).grid(row=0,
+                                                                                                              column=0)
+
     data1 = get_data('insurance')
     s = setup(data1, target='charges', session_id=123)
 
@@ -255,20 +287,29 @@ def run1():
     best = compare_models(include=models1_to_compare)
 
     # plot residuals
-    plot_model(best, plot='residuals')
+    if models1["residuals"].get():
+        plot_model(best, plot='residuals')
 
     # plot error
-    plot_model(best, plot='error')
+    if models1["error"].get():
+        plot_model(best, plot='error')
 
     # plot feature importance
-    plot_model(best, plot='feature')
+    if models1["feature"].get():
+        plot_model(best, plot='feature')
 
 
-ttk.Button(regression_info, text="Select All", command=selectAllRegression).grid(row=8, column=0, padx=5, pady=5,
+regression_action1 = ttk.LabelFrame(mc, text='Actions')
+regression_action1.grid(padx=5, pady=5, sticky=(tk.W + tk.E))
+for i in range(4):
+    regression_action1.columnconfigure(i, weight=1)
+
+
+ttk.Button(regression_action1, text="Select All", command=selectAllRegression).grid(row=8, column=0, padx=5, pady=5,
                                                                                  sticky=(tk.W + tk.E))
-ttk.Button(regression_info, text="Unselect All", command=unselectAllRegression).grid(row=8, column=1, padx=5, pady=5,
+ttk.Button(regression_action1, text="Unselect All", command=unselectAllRegression).grid(row=8, column=1, padx=5, pady=5,
                                                                                      sticky=(tk.W + tk.E))
-ttk.Button(regression_info, text="Run Comparison", command=run1).grid(row=8, column=3, padx=5, pady=5,
+ttk.Button(regression_action1, text="Run Comparison", command=run1).grid(row=8, column=3, padx=5, pady=5,
                                                                       sticky=(tk.W + tk.E))
 
 
@@ -366,16 +407,19 @@ models2["classification_xgboost"] = tk.BooleanVar()
 classification_xgboost = ttk.Checkbutton(classification_info, text="Extreme Gradient Boosting (xgboost)",
                                          variable=models2["classification_xgboost"], onvalue=1, offvalue=0)
 classification_xgboost.grid(row=3, column=3, sticky=(tk.W + tk.E))
+classification_xgboost['state'] = 'disabled'
 
 models2["classification_lightgbm"] = tk.BooleanVar()
 classification_lightgbm = ttk.Checkbutton(classification_info, text="light Gradient Boosting Machine (lightgbm)",
                                           variable=models2["classification_lightgbm"], onvalue=1, offvalue=0)
 classification_lightgbm.grid(row=4, column=0, sticky=(tk.W + tk.E))
+classification_lightgbm['state'] = 'disabled'
 
 models2["classification_catboost"] = tk.BooleanVar()
 classification_catboost = ttk.Checkbutton(classification_info, text="CatBoost Classifier (catboost)",
                                           variable=models2["classification_catboost"], onvalue=1, offvalue=0)
 classification_catboost.grid(row=4, column=1, sticky=(tk.W + tk.E))
+classification_catboost['state'] = 'disabled'
 
 models2["classification_dummy"] = tk.BooleanVar()
 classification_dummy = ttk.Checkbutton(classification_info, text="Dummy Classifier (dummy)",

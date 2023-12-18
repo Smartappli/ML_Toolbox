@@ -106,6 +106,8 @@ def run1():
     if models1["clustering_kmodes"].get():
         models1_to_compare.append("knodes")
 
+    print(models1_to_compare)
+
     data1 = get_data('jewellery')
     s1 = setup(data1, session_id=123)
 
@@ -218,6 +220,8 @@ def run2():
         models2_to_compare.append("sod")
     if models2["ad_sos"].get():
         models2_to_compare.append("sos")
+
+    print (models2_to_compare)
 
     data2 = get_data('anomaly')
     s = setup(data2, session_id=123)
