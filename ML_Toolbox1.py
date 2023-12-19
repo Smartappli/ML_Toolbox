@@ -11,6 +11,8 @@ from tkinter import ttk
 from pycaret.datasets import get_data
 from pycaret.classification import *
 from pycaret.regression import *
+import random
+session_seed = random.randrange(1,1000)
 
 variables = dict()
 models1 = dict()
@@ -287,7 +289,7 @@ def run1():
                                                                                                               column=0)
 
     data1 = get_data('insurance')
-    s = setup(data1, target='charges', session_id=123)
+    s = setup(data1, target='charges', session_id=session_seed)
 
     best = compare_models(include=models1_to_compare)
 
@@ -494,7 +496,7 @@ def run2():
 
     data2 = get_data('diabetes')
     exp2 = ClassificationExperiment()
-    exp2.setup(data2, target='Class variable', session_id=123)
+    exp2.setup(data2, target='Class variable', session_id=session_seed)
 
     compare_classification_models = exp2.compare_models(include=models2_to_compare)
     print(compare_classification_models)

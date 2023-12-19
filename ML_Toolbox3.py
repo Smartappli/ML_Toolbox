@@ -10,6 +10,8 @@ from tkinter import ttk
 from pycaret.datasets import get_data
 from pycaret.clustering import *
 from pycaret.anomaly import *
+import random
+session_seed = random.randrange(1,1000)
 
 variables = dict()
 models1 = dict()
@@ -119,7 +121,7 @@ def run1():
     ttk.Label(clustering_info, text="Selected Models: " + ", ".join(str(x) for x in models1_to_compare)).grid(row=0, column=0)
 
     data1 = get_data('jewellery')
-    s1 = setup(data1, session_id=123)
+    s1 = setup(data1, session_id=session_seed)
 
 clustering_action = ttk.LabelFrame(mc, text='Actions')
 clustering_action.grid(padx=5, pady=5, sticky=(tk.W + tk.E))
@@ -247,7 +249,7 @@ def run2():
     ttk.Label(ad_info, text="Selected Models: " + ", ".join(str(x) for x in models2_to_compare)).grid(row=0, column=0)
 
     data2 = get_data('anomaly')
-    s = setup(data2, session_id=123)
+    s = setup(data2, session_id=session_seed)
 
 
 ad_action = ttk.LabelFrame(mc, text='Actions')

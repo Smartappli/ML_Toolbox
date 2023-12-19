@@ -9,6 +9,8 @@ import tkinter as tk
 from tkinter import ttk
 from pycaret.datasets import get_data
 from pycaret.time_series import *
+import random
+session_seed = random.randrange(1,1000)
 
 variables = dict()
 models = dict()
@@ -298,7 +300,7 @@ def run():
     ttk.Label(ts_info, text="Selected Models: " + ", ".join(str(x) for x in models_to_compare)).grid(row=0, column=0)
 
     data = get_data('airline')
-    s = setup(data, fh=3, session_id=123)
+    s = setup(data, fh=3, session_id=session_seed)
 
     compare_ts_models = compare_models(include=models_to_compare)
 
