@@ -63,7 +63,7 @@
 - Linear Discriminant Analysis (lda)
 - Extra Trees Classifier (et)
 - Extreme Gradient Boosting (xgboost)
-- light Gradient Boosting Machine (lightgbm)
+- Light Gradient Boosting Machine (lightgbm)
 - CatBoost Classifier (catboost)
 - Dummy Classifier (dummy)
 
