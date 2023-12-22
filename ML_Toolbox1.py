@@ -32,9 +32,7 @@ mc.columnconfigure(0, weight=1)
 def selectAllRegression():
     for i1 in models1.keys():
         models1[i1].set(True)
-    models1["regression_xgboost"].set(False)
     models1["regression_lightgbm"].set(False)
-    models1["regression_catboost"].set(False)
     models1["regression_bagging"].set(False)
     models1["regression_stacking"].set(False)
     models1["regression_voting"].set(False)
@@ -163,7 +161,6 @@ models1["regression_xgboost"] = tk.BooleanVar()
 regression_xgboost = ttk.Checkbutton(regression_model, text="Extreme Gradient Boosting (xgboost)",
                                      variable=models1["regression_xgboost"], onvalue=True, offvalue=False)
 regression_xgboost.grid(row=5, column=2, sticky=(tk.W + tk.E))
-regression_xgboost['state'] = 'disabled'
 
 models1["regression_lightgbm"] = tk.BooleanVar()
 regression_lightgbm = ttk.Checkbutton(regression_model, text="Light Gradient Boosting Machine (lightgbm)",
@@ -175,7 +172,6 @@ models1["regression_catboost"] = tk.BooleanVar()
 regression_catboost = ttk.Checkbutton(regression_model, text="CatBoost (catboost)",
                                       variable=models1["regression_catboost"], onvalue=True, offvalue=False)
 regression_catboost.grid(row=6, column=0, sticky=(tk.W + tk.E))
-regression_catboost['state'] = 'disabled'
 
 models1["regression_dummy"] = tk.BooleanVar()
 regression_dummy = ttk.Checkbutton(regression_model, text="Dummy Regressor (dummy)",
@@ -270,12 +266,12 @@ def run1():
         models1_to_compare.append("gbr")
     if models1["regression_mlp"]:
         models1_to_compare.append("mlp")
-    # if models1["regression_xgboost"]:
-        # models1_to_compare.append("xgboost")
+    if models1["regression_xgboost"]:
+        models1_to_compare.append("xgboost")
     # if models1["regression_lightgbm"]:
         # models1_to_compare.append("lightgdm")
-    # if models1["regression_catboost"]:
-        # models1_to_compare.append("catboost")
+    if models1["regression_catboost"]:
+        models1_to_compare.append("catboost")
     if models1["regression_dummy"].get():
         models1_to_compare.append("dummy")
     # if models1["regression_bagging"]:
@@ -323,9 +319,7 @@ ttk.Button(regression_action, text="Run Comparison", command=run1).grid(row=8, c
 def selectAllClassification():
     for i3 in models2.keys():
         models2[i3].set(True)
-    models2["classification_xgboost"].set(False)
     models2["classification_lightgbm"].set(False)
-    models2["classification_catboost"].set(False)
 
 
 def unselectAllClassification():
@@ -417,7 +411,7 @@ models2["classification_xgboost"] = tk.BooleanVar()
 classification_xgboost = ttk.Checkbutton(classification_info, text="Extreme Gradient Boosting (xgboost)",
                                          variable=models2["classification_xgboost"], onvalue=True, offvalue=False)
 classification_xgboost.grid(row=3, column=3, sticky=(tk.W + tk.E))
-classification_xgboost['state'] = 'disabled'
+# classification_xgboost['state'] = 'disabled'
 
 models2["classification_lightgbm"] = tk.BooleanVar()
 classification_lightgbm = ttk.Checkbutton(classification_info, text="light Gradient Boosting Machine (lightgbm)",
@@ -429,7 +423,7 @@ models2["classification_catboost"] = tk.BooleanVar()
 classification_catboost = ttk.Checkbutton(classification_info, text="CatBoost Classifier (catboost)",
                                           variable=models2["classification_catboost"], onvalue=True, offvalue=False)
 classification_catboost.grid(row=4, column=1, sticky=(tk.W + tk.E))
-classification_catboost['state'] = 'disabled'
+# classification_catboost['state'] = 'disabled'
 
 models2["classification_dummy"] = tk.BooleanVar()
 classification_dummy = ttk.Checkbutton(classification_info, text="Dummy Classifier (dummy)",
@@ -482,12 +476,12 @@ def run2():
         models2_to_compare.append("lda")
     if models2["classification_et"].get():
         models2_to_compare.append("et")
-    # if models2["classification_xgboost"]:
-        # models2_to_compare.append("xgboost")
+    if models2["classification_xgboost"]:
+        models2_to_compare.append("xgboost")
     # if models2["classification_lightgbm"]:
         # models2_to_compare.append("lightgbm")
-    # if models2["classification_catboost"]:
-        # models2_to_compare.append("catboost")
+    if models2["classification_catboost"]:
+        models2_to_compare.append("catboost")
     if models2["classification_dummy"].get():
         models2_to_compare.append("dummy")
 
