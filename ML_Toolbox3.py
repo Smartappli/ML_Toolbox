@@ -11,6 +11,7 @@ from pycaret.datasets import get_data
 from pycaret.clustering import *
 from pycaret.anomaly import *
 import random
+
 session_seed = random.randrange(1,1000)
 
 variables = dict()

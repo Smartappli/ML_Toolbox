@@ -10,6 +10,7 @@ from tkinter import ttk
 from pycaret.datasets import get_data
 from pycaret.time_series import *
 import random
+
 session_seed = random.randrange(1,1000)
 
 variables = dict()
@@ -28,11 +29,8 @@ mc.columnconfigure(0, weight=1)
 def selectAllTS():
     for i1 in models.keys():
         models[i1].set(True)
-    models["ts_prophet"].set(False)
     models["ts_lar_cds_dt"].set(False)
     models["ts_par_cds_dt"].set(False)
-    models["ts_xgboost_cds_dt"].set(False)
-    models["ts_catboost_cds_dt"].set(False)
 
 def unselectAllTS():
     for i2 in models.keys():
@@ -104,7 +102,6 @@ ts_tbats.grid(row=3, column=0, sticky=(tk.W + tk.E))
 models["ts_prophet"] = tk.BooleanVar()
 ts_prophet = ttk.Checkbutton(ts_model, text="Prophet (prophet)", variable=models["ts_prophet"], onvalue=1, offvalue=0)
 ts_prophet.grid(row=3, column=1, sticky=(tk.W + tk.E))
-ts_prophet['state'] = 'disabled'
 
 models["ts_lr_cds_dt"] = tk.BooleanVar()
 ts_lr_cds_dt = ttk.Checkbutton(ts_model, text="Linear w/ Cond. Deseasonalize & Detrending (lr_cds_dt)",
@@ -196,7 +193,6 @@ ts_xgboost_cds_dt = ttk.Checkbutton(ts_model,
                                     text="Extreme Gradient Boosting w/ Cond. Deseasonalize & Detrending (xgboost_cds_dt)",
                                     variable=models["ts_xgboost_cds_dt"], onvalue=1, offvalue=0)
 ts_xgboost_cds_dt.grid(row=7, column=2, sticky=(tk.W + tk.E))
-ts_xgboost_cds_dt['state'] = 'disabled'
 
 models["ts_lightgbm_cds_dt"] = tk.BooleanVar()
 ts_lightgbm_cds_dt = ttk.Checkbutton(ts_model,
@@ -209,7 +205,6 @@ ts_catboost_cds_dt = ttk.Checkbutton(ts_model,
                                      text="CatBoost Regressor w/ Cond. Deseasonalize & Detrending (catboost_cds_dt)",
                                      variable=models["ts_catboost_cds_dt"], onvalue=1, offvalue=0)
 ts_catboost_cds_dt.grid(row=8, column=0, sticky=(tk.W + tk.E))
-ts_catboost_cds_dt['state'] = 'disabled'
 
 ts_output = ttk.LabelFrame(mc, text='Output')
 ts_output.grid(padx=5, pady=5, sticky=(tk.W + tk.E))
@@ -256,8 +251,8 @@ def run():
         models_to_compare.append("bats")
     if models["ts_tbats"].get():
         models_to_compare.append("tbats")
-    # if models["ts_prophet"].get():
-        # models_to_compare.append("prophet")
+    if models["ts_prophet"].get():
+        models_to_compare.append("prophet")
     if models["ts_lr_cds_dt"].get():
         models_to_compare.append("lr_cds_dt")
     if models["ts_en_cds_dt"].get():
@@ -290,8 +285,8 @@ def run():
         models_to_compare.append("gbr_cds_dt")
     if models["ts_ada_cds_dt"].get():
         models_to_compare.append("ada_cds_dt")
-    # if models["ts_xgboost_cds_dt"].get():
-        # models_to_compare.append("xgboost_cds_dt")
+    if models["ts_xgboost_cds_dt"].get():
+        models_to_compare.append("xgboost_cds_dt")
     if models["ts_lightgbm_cds_dt"].get():
         models_to_compare.append("lightgbm_cds_dt")
     if models["ts_catboost_cds_dt"].get():
