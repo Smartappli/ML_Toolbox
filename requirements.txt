@@ -1,2 +1,2 @@
 tk==0.1.0
-pycaret[analysis, mocdlx, tuner, parallel]
+pycaret[analysis, mocdels, tuner, parallel]
