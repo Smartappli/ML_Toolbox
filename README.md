@@ -3,7 +3,7 @@
 ## Dependencies
 
  - pip install tk==0.1.0
- - pip install pycaret[analysis, mocdlx, tuner, parallel]
+ - pip install pycaret[analysis, models, tuners, parallel]
 
 ## Installation
 
