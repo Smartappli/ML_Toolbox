@@ -13,9 +13,9 @@ from pycaret.time_series import *
 
 session_seed = random.randrange(1,1000)
 
-variables = dict()
-models = dict()
-models_output = dict()
+variables = {}
+models = {}
+models_output = {}
 
 root = tk.Tk()
 root.title('Ai Toolbox - Machine Learning - Time Series Analysis')
@@ -399,8 +399,8 @@ ts_output = ttk.LabelFrame(mc, text='Output')
 ts_output.grid(padx=5,
                pady=5,
                sticky=(tk.W + tk.E))
-for i in range(4):
-    ts_output.columnconfigure(i, weight=1)
+for i4 in range(4):
+    ts_output.columnconfigure(i4, weight=1)
 
 models_output["forecast"] = tk.BooleanVar()
 ts_feature = ttk.Checkbutton(ts_output,
@@ -504,7 +504,7 @@ def run():
                                                                         column=0)
 
     data = get_data('airline')
-    s = setup(data, fh=3, session_id=session_seed)
+    setup(data, fh=3, session_id=session_seed)
 
     compare_ts_models = compare_models(include=models_to_compare)
 
@@ -519,8 +519,8 @@ def run():
 
 ts_action = ttk.LabelFrame(mc, text='Actions')
 ts_action.grid(padx=5, pady=5, sticky=(tk.W + tk.E))
-for i in range(4):
-    ts_action.columnconfigure(i, weight=1)
+for i5 in range(4):
+    ts_action.columnconfigure(i5, weight=1)
 
 ttk.Button(ts_action,
            text="Select All",

@@ -39,6 +39,7 @@ def selectAllRegression():
     models1["regression_voting"].set(False)
 
 def unselectAllRegression():
+    """Method to unselet all regression models"""
     for i2 in models1.keys():
         models1[i2].set(False)
 
@@ -48,8 +49,8 @@ regression_model = ttk.LabelFrame(mc,
 regression_model.grid(padx=5,
                       pady=5,
                       sticky=(tk.W + tk.E))
-for i in range(4):
-    regression_model.columnconfigure(i, weight=1)
+for i3 in range(4):
+    regression_model.columnconfigure(i3, weight=1)
 
 models1["regression_lr"] = tk.BooleanVar()
 regression_lr = ttk.Checkbutton(regression_model,
@@ -351,8 +352,8 @@ regression_output = ttk.LabelFrame(mc,
 regression_output.grid(padx=5,
                        pady=5,
                        sticky=(tk.W + tk.E))
-for i in range(4):
-    regression_output.columnconfigure(i, weight=1)
+for i4 in range(4):
+    regression_output.columnconfigure(i4, weight=1)
 
 models1_output["feature"] = tk.BooleanVar()
 regression_feature = ttk.Checkbutton(regression_output,
@@ -393,6 +394,7 @@ regression_info.columnconfigure(1, weight=1)
 
 
 def run1():
+    """Method to run regression models"""
     models1_to_compare = []
     if models1["regression_lr"].get():
         models1_to_compare.append("lr")
@@ -482,8 +484,8 @@ regression_action = ttk.LabelFrame(mc, text='Actions')
 regression_action.grid(padx=5,
                        pady=5,
                        sticky=(tk.W + tk.E))
-for i in range(4):
-    regression_action.columnconfigure(i, weight=1)
+for i5 in range(4):
+    regression_action.columnconfigure(i5, weight=1)
 
 
 ttk.Button(regression_action,
@@ -510,22 +512,24 @@ ttk.Button(regression_action,
 
 
 def selectAllClassification():
-    for i3 in models2.keys():
-        models2[i3].set(True)
+    """Method to select all classificatin models"""
+    for i6 in models2.keys():
+        models2[i6].set(True)
     models2["classification_lightgbm"].set(False)
 
 
 def unselectAllClassification():
-    for i4 in models2.keys():
-        models2[i4].set(False)
+    """Method to unselect all classification models"""
+    for i7 in models2.keys():
+        models2[i7].set(False)
 
 
 classification_info = ttk.LabelFrame(mc, text='Classification')
 classification_info.grid(padx=5,
                          pady=5,
                          sticky=(tk.W + tk.E))
-for i in range(4):
-    classification_info.columnconfigure(i, weight=1)
+for i8 in range(4):
+    classification_info.columnconfigure(i8, weight=1)
 
 models2["classification_lr"] = tk.BooleanVar()
 classification_lr = ttk.Checkbutton(classification_info,
@@ -727,8 +731,8 @@ classification_output = ttk.LabelFrame(mc, text='Output')
 classification_output.grid(padx=5,
                            pady=5,
                            sticky=(tk.W + tk.E))
-for i in range(4):
-    classification_output.columnconfigure(i, weight=1)
+for i9 in range(4):
+    classification_output.columnconfigure(i9, weight=1)
 
 
 
@@ -741,6 +745,7 @@ classification_info.columnconfigure(1, weight=1)
 
 
 def run2():
+    """%ethod to run classification models"""
     models2_to_compare = []
     if models2["classification_lr"].get():
         models2_to_compare.append("lr")
@@ -798,8 +803,8 @@ classification_action = ttk.LabelFrame(mc, text='Actions')
 classification_action.grid(padx=5,
                            pady=5,
                            sticky=(tk.W + tk.E))
-for i in range(4):
-    classification_action.columnconfigure(i, weight=1)
+for i10 in range(4):
+    classification_action.columnconfigure(i10, weight=1)
 
 ttk.Button(classification_action,
            text="Select All",
