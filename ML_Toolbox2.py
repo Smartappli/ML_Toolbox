@@ -11,7 +11,7 @@ from tkinter import ttk
 from pycaret.datasets import get_data
 from pycaret.time_series import *
 
-session_seed = random.randrange(1,1000)
+session_seed = random.randrange(1, 1000)
 
 variables = {}
 models = {}
@@ -26,14 +26,15 @@ mc.grid(padx=10, pady=10, sticky=(tk.W + tk.E))
 mc.columnconfigure(0, weight=1)
 
 
-def selectAllTS():
+def select_all_ts():
     """Method to select all time series models"""
     for i1 in models.keys():
         models[i1].set(True)
     models["ts_lar_cds_dt"].set(False)
     models["ts_par_cds_dt"].set(False)
 
-def unselectAllTS():
+
+def unselect_all_ts():
     """Methode to unselect all time series models"""
     for i2 in models.keys():
         models[i2].set(False)
@@ -447,6 +448,7 @@ ts_info.grid(padx=5,
              sticky=(tk.W + tk.E))
 ts_info.columnconfigure(1, weight=1)
 
+
 def run():
     """Method to run all time series models"""
     models_to_compare = []
@@ -487,7 +489,7 @@ def run():
     if models["ts_lasso_cds_dt"].get():
         models_to_compare.append("lasso_cds_dt")
     # if models["ts_lar_cds_dt"].get():
-        # models_to_compare.append("lar_cds_dt")
+    # models_to_compare.append("lar_cds_dt")
     if models["ts_llar_cds_dt"].get():
         models_to_compare.append("llar_cds_dt")
     if models["ts_br_cds_dt"].get():
@@ -495,7 +497,7 @@ def run():
     if models["ts_huber_cds_dt"].get():
         models_to_compare.append("huber_cds_dt")
     # if models["ts_par_cds_dt"].get():
-        # models_to_compare.append("par_cds_dt")
+    # models_to_compare.append("par_cds_dt")
     if models["ts_omp_cds_dt"].get():
         models_to_compare.append("omp_cds_dt")
     if models["ts_knn_cds_dt"].get():
@@ -543,18 +545,18 @@ for i5 in range(4):
 
 ttk.Button(ts_action,
            text="Select All",
-           command=selectAllTS).grid(row=8,
-                                     column=0,
-                                     padx=5,
-                                     pady=5,
-                                     sticky=(tk.W + tk.E))
-ttk.Button(ts_action,
-           text="unselect All",
-           command=unselectAllTS).grid(row=8,
-                                       column=1,
+           command=select_all_ts).grid(row=8,
+                                       column=0,
                                        padx=5,
                                        pady=5,
                                        sticky=(tk.W + tk.E))
+ttk.Button(ts_action,
+           text="unselect All",
+           command=unselect_all_ts).grid(row=8,
+                                         column=1,
+                                         padx=5,
+                                         pady=5,
+                                         sticky=(tk.W + tk.E))
 ttk.Button(ts_action,
            text="Run comparison",
            command=run).grid(row=8,
@@ -562,7 +564,6 @@ ttk.Button(ts_action,
                              padx=5,
                              pady=5,
                              sticky=(tk.W + tk.E))
-
 
 # Show the window
 root.mainloop()
