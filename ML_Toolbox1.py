@@ -14,11 +14,11 @@ from pycaret.regression import *
 import random
 session_seed = random.randrange(1,1000)
 
-variables = dict()
-models1 = dict()
-models1_output = dict()
-models2 = dict()
-models2_output = dict()
+variables = {}
+models1 = {}
+models1_output = {}
+models2 = {}
+models2_output = {}
 
 root = tk.Tk()
 root.title('Ai Toolbox - Machine Learning - Supervised Learning')
@@ -30,6 +30,7 @@ mc.columnconfigure(0, weight=1)
 
 
 def selectAllRegression():
+    """Method to select all regressinon models"""
     for i1 in models1.keys():
         models1[i1].set(True)
     models1["regression_lightgbm"].set(False)
@@ -354,13 +355,21 @@ for i in range(4):
     regression_output.columnconfigure(i, weight=1)
 
 models1_output["feature"] = tk.BooleanVar()
-regression_feature = ttk.Checkbutton(regression_output, text="Feature", variable=models1_output["feature"], onvalue=True, offvalue=False)
+regression_feature = ttk.Checkbutton(regression_output,
+                                     text="Feature",
+                                     variable=models1_output["feature"],
+                                     onvalue=True,
+                                     offvalue=False)
 regression_feature.grid(row=0,
                         column=0,
                         sticky=(tk.W + tk.E))
 
 models1_output["residuals"] = tk.BooleanVar()
-regression_residuals = ttk.Checkbutton(regression_output, text="Residuals", variable=models1_output["residuals"], onvalue=True, offvalue=False)
+regression_residuals = ttk.Checkbutton(regression_output,
+                                       text="Residuals",
+                                       variable=models1_output["residuals"],
+                                       onvalue=True,
+                                       offvalue=False)
 regression_residuals.grid(row=0,
                           column=1,
                           sticky=(tk.W + tk.E))
@@ -446,7 +455,8 @@ def run1():
 
     ttk.Label(regression_info,
               text="Selected Models: "
-                   + ", ".join(str(x) for x in models1_to_compare)).grid(row=0, column=0)
+                   + ", ".join(str(x) for x in models1_to_compare)).grid(row=0,
+                                                                         column=0)
 
     data1 = get_data('insurance')
     setup(data1,
@@ -678,33 +688,36 @@ classification_xgboost.grid(row=3,
 # classification_xgboost['state'] = 'disabled'
 
 models2["classification_lightgbm"] = tk.BooleanVar()
-classification_lightgbm = ttk.Checkbutton(classification_info,
-                                          text="light Gradient Boosting Machine (lightgbm)",
-                                          variable=models2["classification_lightgbm"],
-                                          onvalue=True,
-                                          offvalue=False)
+classification_lightgbm = (
+    ttk.Checkbutton(classification_info,
+                    text="light Gradient Boosting Machine (lightgbm)",
+                    variable=models2["classification_lightgbm"],
+                    onvalue=True,
+                    offvalue=False))
 classification_lightgbm.grid(row=4,
                              column=0,
                              sticky=(tk.W + tk.E))
 classification_lightgbm['state'] = 'disabled'
 
 models2["classification_catboost"] = tk.BooleanVar()
-classification_catboost = ttk.Checkbutton(classification_info,
-                                          text="CatBoost Classifier (catboost)",
-                                          variable=models2["classification_catboost"],
-                                          onvalue=True,
-                                          offvalue=False)
+classification_catboost = (
+    ttk.Checkbutton(classification_info,
+                    text="CatBoost Classifier (catboost)",
+                    variable=models2["classification_catboost"],
+                    onvalue=True,
+                    offvalue=False))
 classification_catboost.grid(row=4,
                              column=1,
                              sticky=(tk.W + tk.E))
 # classification_catboost['state'] = 'disabled'
 
 models2["classification_dummy"] = tk.BooleanVar()
-classification_dummy = ttk.Checkbutton(classification_info,
-                                       text="Dummy Classifier (dummy)",
-                                       variable=models2["classification_dummy"],
-                                       onvalue=True,
-                                       offvalue=False)
+classification_dummy = (
+    ttk.Checkbutton(classification_info,
+                    text="Dummy Classifier (dummy)",
+                    variable=models2["classification_dummy"],
+                    onvalue=True,
+                    offvalue=False))
 classification_dummy.grid(row=4,
                           column=2,
                           sticky=(tk.W + tk.E))
@@ -770,7 +783,8 @@ def run2():
 
     ttk.Label(classification_info,
               text="Selected Models: "
-                   + ", ".join(str(x) for x in models2_to_compare)).grid(row=0, column=0)
+                   + ", ".join(str(x) for x in models2_to_compare)).grid(row=0,
+                                                                         column=0)
 
     data2 = get_data('diabetes')
     exp2 = ClassificationExperiment()
