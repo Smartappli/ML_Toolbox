@@ -29,7 +29,7 @@ mc.grid(padx=10, pady=10, sticky=(tk.W + tk.E))
 mc.columnconfigure(0, weight=1)
 
 
-def selectAllRegression():
+def select_all_regression():
     """Method to select all regressinon models"""
     for i1 in models1.keys():
         models1[i1].set(True)
@@ -38,7 +38,7 @@ def selectAllRegression():
     models1["regression_stacking"].set(False)
     models1["regression_voting"].set(False)
 
-def unselectAllRegression():
+def unselect_all_regression():
     """Method to unselet all regression models"""
     for i2 in models1.keys():
         models1[i2].set(False)
@@ -490,14 +490,14 @@ for i5 in range(4):
 
 ttk.Button(regression_action,
            text="Select All",
-           command=selectAllRegression).grid(row=8,
+           command=select_all_regression).grid(row=8,
                                              column=0,
                                              padx=5,
                                              pady=5,
                                              sticky=(tk.W + tk.E))
 ttk.Button(regression_action,
            text="Unselect All",
-           command=unselectAllRegression).grid(row=8,
+           command=unselect_all_regression).grid(row=8,
                                                column=1,
                                                padx=5,
                                                pady=5,
@@ -511,14 +511,14 @@ ttk.Button(regression_action,
                               sticky=(tk.W + tk.E))
 
 
-def selectAllClassification():
+def select_all_classification():
     """Method to select all classificatin models"""
     for i6 in models2.keys():
         models2[i6].set(True)
     models2["classification_lightgbm"].set(False)
 
 
-def unselectAllClassification():
+def unselect_all_classification():
     """Method to unselect all classification models"""
     for i7 in models2.keys():
         models2[i7].set(False)
@@ -808,14 +808,14 @@ for i10 in range(4):
 
 ttk.Button(classification_action,
            text="Select All",
-           command=selectAllClassification).grid(row=5,
+           command=select_all_classification).grid(row=5,
                                                  column=0,
                                                  padx=5,
                                                  pady=5,
                                                  sticky=(tk.W + tk.E))
 ttk.Button(classification_action,
            text="Unselect All",
-           command=unselectAllClassification).grid(row=5,
+           command=unselect_all_classification).grid(row=5,
                                                    column=1,
                                                    padx=5,
                                                    pady=5,
