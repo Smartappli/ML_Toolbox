@@ -187,7 +187,8 @@ ts_prophet.grid(row=3,
 models["ts_lr_cds_dt"] = tk.BooleanVar()
 ts_lr_cds_dt = (
     ttk.Checkbutton(ts_model,
-                    text="Linear w/ Cond. Deseasonalize & Detrending (lr_cds_dt)",
+                    text="Linear w/ Cond. Deseasonalize & \
+                    Detrending (lr_cds_dt)",
                     variable=models["ts_lr_cds_dt"],
                     onvalue=1,
                     offvalue=0))
@@ -198,7 +199,8 @@ ts_lr_cds_dt.grid(row=3,
 models["ts_en_cds_dt"] = tk.BooleanVar()
 ts_en_cds_dt = (
     ttk.Checkbutton(ts_model,
-                    text="Elastic Net w/ Cond. Deseasonalize & Detrending (en_cds_dt)",
+                    text="Elastic Net w/ Cond. Deseasonalize & \
+                    Detrending (en_cds_dt)",
                     variable=models["ts_en_cds_dt"],
                     onvalue=1,
                     offvalue=0))
@@ -209,7 +211,8 @@ ts_en_cds_dt.grid(row=3,
 models["ts_ridge_cds_dt"] = tk.BooleanVar()
 ts_ridge_cds_dt = (
     ttk.Checkbutton(ts_model,
-                    text="Ridge w/ Cond. Deseasonalize & Detrending (ridge_cds_dt)",
+                    text="Ridge w/ Cond. Deseasonalize & \
+                    Detrending (ridge_cds_dt)",
                     variable=models["ts_ridge_cds_dt"],
                     onvalue=1,
                     offvalue=0))
@@ -220,7 +223,8 @@ ts_ridge_cds_dt.grid(row=4,
 models["ts_lasso_cds_dt"] = tk.BooleanVar()
 ts_lasso_cds_dt = (
     ttk.Checkbutton(ts_model,
-                    text="Lasso w/ Cond. Deseasonalize & Detrending (lasso_cds_dt)",
+                    text="Lasso w/ Cond. Deseasonalize & \
+                          Detrending (lasso_cds_dt)",
                     variable=models["ts_lasso_cds_dt"],
                     onvalue=1,
                     offvalue=0))
@@ -231,7 +235,8 @@ ts_lasso_cds_dt.grid(row=4,
 models["ts_lar_cds_dt"] = tk.BooleanVar()
 ts_lar_cds_dt = (
     ttk.Checkbutton(ts_model,
-                    text="Least Angular Regressor w/ Cond. Deseasonalize & Detrending (lar_cds_dt)",
+                    text="Least Angular Regressor w/ Cond. \
+                          Deseasonalize & Detrending (lar_cds_dt)",
                     variable=models["ts_lar_cds_dt"],
                     onvalue=1,
                     offvalue=0))
@@ -243,7 +248,8 @@ ts_lar_cds_dt['state'] = 'disabled'
 models["ts_llar_cds_dt"] = tk.BooleanVar()
 ts_llar_cds_dt = (
     ttk.Checkbutton(ts_model,
-                    text="Lasso Least Angular Regressor w/ Cond. Deseasonalize & Detrending (llar_cds_dt)",
+                    text="Lasso Least Angular Regressor w/ Cond. \
+                    Deseasonalize & Detrending (llar_cds_dt)",
                     variable=models["ts_llar_cds_dt"],
                     onvalue=1,
                     offvalue=0))
@@ -254,7 +260,8 @@ ts_llar_cds_dt.grid(row=4,
 models["ts_br_cds_dt"] = tk.BooleanVar()
 ts_br_cds_dt = (
     ttk.Checkbutton(ts_model,
-                    text="Bayesian Ridge w/ Cond. Deseasonalize & Detrending (bs_cds_dt)",
+                    text="Bayesian Ridge w/ Cond. Deseasonalize & \
+                    Detrending (bs_cds_dt)",
                     variable=models["ts_br_cds_dt"],
                     onvalue=1,
                     offvalue=1))
@@ -265,7 +272,8 @@ ts_br_cds_dt.grid(row=5,
 models["ts_huber_cds_dt"] = tk.BooleanVar()
 ts_huber_cds_dt = (
     ttk.Checkbutton(ts_model,
-                    text="Huber w/ Cond. Deseasonalize & Detrending (huber_cds_dt)",
+                    text="Huber w/ Cond. Deseasonalize & Detrending \
+                    (huber_cds_dt)",
                     variable=models["ts_huber_cds_dt"],
                     onvalue=1,
                     offvalue=0))
@@ -276,7 +284,8 @@ ts_huber_cds_dt.grid(row=5,
 models["ts_par_cds_dt"] = tk.BooleanVar()
 ts_par_cds_dt = (
     ttk.Checkbutton(ts_model,
-                    text="Passive Aggressive w/ Cond. Deseasonalize & Detrending (par_cds_dt)",
+                    text="Passive Aggressive w/ Cond. Deseasonalize & \
+                          Detrending (par_cds_dt)",
                     variable=models["ts_par_cds_dt"],
                     onvalue=1,
                     offvalue=0))
@@ -288,7 +297,8 @@ ts_par_cds_dt['state'] = 'disabled'
 models["ts_omp_cds_dt"] = tk.BooleanVar()
 ts_omp_cds_dt = (
     ttk.Checkbutton(ts_model,
-                    text="Orthogonal Matching Pursuit w/ Cond. Deseasonalize & Detrending (omp_cds_dt)",
+                    text="Orthogonal Matching Pursuit w/ Cond. \
+                          Deseasonalize & Detrending (omp_cds_dt)",
                     variable=models["ts_omp_cds_dt"],
                     onvalue=1,
                     offvalue=0))
@@ -299,7 +309,8 @@ ts_omp_cds_dt.grid(row=5,
 models["ts_knn_cds_dt"] = tk.BooleanVar()
 ts_knn_cds_dt = (
     ttk.Checkbutton(ts_model,
-                    text="K Neighbors w/ Cond. Deseasonalize & Detrending (knn_cds_dt)",
+                    text="K Neighbors w/ Cond. Deseasonalize & \
+                          Detrending (knn_cds_dt)",
                     variable=models["ts_knn_cds_dt"],
                     onvalue=1,
                     offvalue=0))
@@ -310,7 +321,8 @@ ts_knn_cds_dt.grid(row=6,
 models["ts_dt_cds_dt"] = tk.BooleanVar()
 ts_dt_cds_dt = (
     ttk.Checkbutton(ts_model,
-                    text="Decision Tree w/ Cond. Deseasonalize & Detrending (dt_cds_dt)",
+                    text="Decision Tree w/ Cond. Deseasonalize & \
+                          Detrending (dt_cds_dt)",
                     variable=models["ts_dt_cds_dt"],
                     onvalue=1,
                     offvalue=0))
@@ -321,7 +333,8 @@ ts_dt_cds_dt.grid(row=6,
 models["ts_rf_cds_dt"] = tk.BooleanVar()
 ts_rf_cds_dt = (
     ttk.Checkbutton(ts_model,
-                    text="Random Forest w/ Cond. Deseasonalize & Detrending (rf_cds_dt)",
+                    text="Random Forest w/ Cond. Deseasonalize & \
+                          Detrending (rf_cds_dt)",
                     variable=models["ts_rf_cds_dt"],
                     onvalue=1,
                     offvalue=0))
@@ -332,7 +345,8 @@ ts_rf_cds_dt.grid(row=6,
 models["ts_et_cds_dt"] = tk.BooleanVar()
 ts_rf_cds_dt = (
     ttk.Checkbutton(ts_model,
-                    text="Extra Trees w/ Cond. Deseasonalize & Detrending (et_cds_dt)",
+                    text="Extra Trees w/ Cond. Deseasonalize & \
+                          Detrending (et_cds_dt)",
                     variable=models["ts_et_cds_dt"],
                     onvalue=1,
                     offvalue=0))
@@ -343,7 +357,8 @@ ts_rf_cds_dt.grid(row=6,
 models["ts_gbr_cds_dt"] = tk.BooleanVar()
 ts_gbr_cds_dt = (
     ttk.Checkbutton(ts_model,
-                    text="Gradient Boosting w/ Cond. Deseasonalize & Detrending (gbr_cds_dt)",
+                    text="Gradient Boosting w/ Cond. Deseasonalize & \
+                          Detrending (gbr_cds_dt)",
                     variable=models["ts_gbr_cds_dt"],
                     onvalue=1,
                     offvalue=0))
@@ -354,7 +369,8 @@ ts_gbr_cds_dt.grid(row=7,
 models["ts_ada_cds_dt"] = tk.BooleanVar()
 ts_ada_cds_dt = (
     ttk.Checkbutton(ts_model,
-                    text="AdaBoost w/ Cond. Deseasonalize & Detrending (ada_cds_dt)",
+                    text="AdaBoost w/ Cond. Deseasonalize & \
+                          Detrending (ada_cds_dt)",
                     variable=models["ts_ada_cds_dt"],
                     onvalue=1,
                     offvalue=0))
@@ -365,7 +381,8 @@ ts_ada_cds_dt.grid(row=7,
 models["ts_xgboost_cds_dt"] = tk.BooleanVar()
 ts_xgboost_cds_dt = (
     ttk.Checkbutton(ts_model,
-                    text="Extreme Gradient Boosting w/ Cond. Deseasonalize & Detrending (xgboost_cds_dt)",
+                    text="Extreme Gradient Boosting w/ Cond. \
+                          Deseasonalize & Detrending (xgboost_cds_dt)",
                     variable=models["ts_xgboost_cds_dt"],
                     onvalue=1,
                     offvalue=0))
@@ -376,7 +393,8 @@ ts_xgboost_cds_dt.grid(row=7,
 models["ts_lightgbm_cds_dt"] = tk.BooleanVar()
 ts_lightgbm_cds_dt = (
     ttk.Checkbutton(ts_model,
-                    text="Light Gradient Boosting w/ Cond. Deseasonalize & Detrending (lightgbm_cds_dt)",
+                    text="Light Gradient Boosting w/ Cond. \
+                          Deseasonalize & Detrending (lightgbm_cds_dt)",
                     variable=models["ts_lightgbm_cds_dt"],
                     onvalue=1,
                     offvalue=0))
@@ -387,7 +405,8 @@ ts_lightgbm_cds_dt.grid(row=7,
 models["ts_catboost_cds_dt"] = tk.BooleanVar()
 ts_catboost_cds_dt = (
     ttk.Checkbutton(ts_model,
-                    text="CatBoost Regressor w/ Cond. Deseasonalize & Detrending (catboost_cds_dt)",
+                    text="CatBoost Regressor w/ Cond. Deseasonalize & \
+                          Detrending (catboost_cds_dt)",
                     variable=models["ts_catboost_cds_dt"],
                     onvalue=1,
                     offvalue=0))

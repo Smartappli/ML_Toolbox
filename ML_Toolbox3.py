@@ -396,7 +396,7 @@ def run2():
                                                                          column=0)
 
     data2 = get_data('anomaly')
-    s = setup(data2, session_id=session_seed)
+    setup(data2, session_id=session_seed)
 
 
 ad_action = ttk.LabelFrame(mc, text='Actions')
