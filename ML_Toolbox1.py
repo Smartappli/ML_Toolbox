@@ -5,13 +5,13 @@ Created on Wed Nov  1 22:45:19 2023
 @author: UMONS - 532807
 """
 
+import random
 import tkinter as tk
 from tkinter import ttk
-# import pycaret
 from pycaret.datasets import get_data
 from pycaret.classification import *
 from pycaret.regression import *
-import random
+
 session_seed = random.randrange(1,1000)
 
 variables = {}

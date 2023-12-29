@@ -5,18 +5,18 @@ Created on Wed Nov 22 19:57:33 2023
 @author: 532807
 """
 
+import random
 import tkinter as tk
 from tkinter import ttk
 from pycaret.datasets import get_data
 from pycaret.clustering import *
 from pycaret.anomaly import *
-import random
 
-session_seed = random.randrange(1,1000)
+session_seed = random.randrange(1, 1000)
 
-variables = dict()
-models1 = dict()
-models2 = dict()
+variables = {}
+models1 = {}
+models2 = {}
 
 root = tk.Tk()
 root.title('Ai Toolbox - Machine Learning - Time Series Analysis')
@@ -28,19 +28,21 @@ mc.columnconfigure(0, weight=1)
 
 
 def selectAllClustering():
-    for i in models1.keys():
-        models1[i].set(True)
+    for i1 in models1.keys():
+        models1[i1].set(True)
 
 
 def unselectAllClustering():
-    for i in models1.keys():
-        models1[i].set(False)
+    for i2 in models1.keys():
+        models1[i2].set(False)
 
 
 clustering_model = ttk.LabelFrame(mc, text='Clustering')
-clustering_model.grid(padx=5, pady=5, sticky=(tk.W + tk.E))
-for i in range(4):
-    clustering_model.columnconfigure(i, weight=1)
+clustering_model.grid(padx=5,
+                      pady=5,
+                      sticky=(tk.W + tk.E))
+for i3 in range(4):
+    clustering_model.columnconfigure(i3, weight=1)
 
 models1["clustering_kmeans"] = tk.BooleanVar()
 clustering_kmeans = ttk.Checkbutton(clustering_model,
@@ -136,9 +138,8 @@ clustering_output = ttk.LabelFrame(mc, text='Output')
 clustering_output.grid(padx=5,
                        pady=5,
                        sticky=(tk.W + tk.E))
-for i in range(4):
-    clustering_output.columnconfigure(i, weight=1)
-
+for i4 in range(4):
+    clustering_output.columnconfigure(i4, weight=1)
 
 clustering_info = ttk.LabelFrame(mc, text='Information')
 clustering_info.grid(padx=5,
@@ -146,7 +147,9 @@ clustering_info.grid(padx=5,
                      sticky=(tk.W + tk.E))
 clustering_info.columnconfigure(1, weight=1)
 
+
 def run1():
+    """Method for running clustering models"""
     models1_to_compare = []
     if models1["clustering_kmeans"].get():
         models1_to_compare.append("kmeans")
@@ -173,14 +176,15 @@ def run1():
                                                                          column=0)
 
     data1 = get_data('jewellery')
-    s1 = setup(data1, session_id=session_seed)
+    setup(data1, session_id=session_seed)
+
 
 clustering_action = ttk.LabelFrame(mc, text='Actions')
 clustering_action.grid(padx=5,
                        pady=5,
                        sticky=(tk.W + tk.E))
-for i in range(4):
-    clustering_action.columnconfigure(i, weight=1)
+for i5 in range(4):
+    clustering_action.columnconfigure(i5, weight=1)
 
 ttk.Button(clustering_action,
            text="Select All",
@@ -206,21 +210,23 @@ ttk.Button(clustering_action,
 
 
 def selectAllAD():
-    for i in models2.keys():
-        models2[i].set(True)
+    """Method to select all anomaly detection models"""
+    for i6 in models2.keys():
+        models2[i6].set(True)
 
 
 def unselectAllAD():
-    for i in models2.keys():
-        models2[i].set(False)
+    """Method to unselect all anomaly detection"""
+    for i7 in models2.keys():
+        models2[i7].set(False)
 
 
 ad_model = ttk.LabelFrame(mc, text='Anomaly Detection')
 ad_model.grid(padx=5,
               pady=5,
               sticky=(tk.W + tk.E))
-for i in range(4):
-    ad_model.columnconfigure(i, weight=1)
+for i8 in range(4):
+    ad_model.columnconfigure(i8, weight=1)
 
 models2["ap_abod"] = tk.BooleanVar()
 ad_abod = ttk.Checkbutton(ad_model,
@@ -346,8 +352,8 @@ ad_output = ttk.LabelFrame(mc, text='Output')
 ad_output.grid(padx=5,
                pady=5,
                sticky=(tk.W + tk.E))
-for i in range(4):
-    ad_output.columnconfigure(i, weight=1)
+for i9 in range(4):
+    ad_output.columnconfigure(i9, weight=1)
 
 ad_info = ttk.LabelFrame(mc, text='Information')
 ad_info.grid(padx=5,
@@ -355,7 +361,9 @@ ad_info.grid(padx=5,
              sticky=(tk.W + tk.E))
 ad_info.columnconfigure(1, weight=1)
 
+
 def run2():
+    """Method to run anomaly detection models"""
     models2_to_compare = []
     if models2["ap_abod"].get():
         models2_to_compare.append("abod")
@@ -393,8 +401,8 @@ def run2():
 
 ad_action = ttk.LabelFrame(mc, text='Actions')
 ad_action.grid(padx=5, pady=5, sticky=(tk.W + tk.E))
-for i in range(4):
-    ad_action.columnconfigure(i, weight=1)
+for i10 in range(4):
+    ad_action.columnconfigure(i10, weight=1)
 
 ttk.Button(ad_action,
            text="Select All",
@@ -409,7 +417,7 @@ ttk.Button(ad_action,
                                        column=1,
                                        padx=5,
                                        pady=5,
-                                      sticky=(tk.W + tk.E))
+                                       sticky=(tk.W + tk.E))
 ttk.Button(ad_action,
            text="Run comparison",
            command=run2).grid(row=3,
@@ -417,7 +425,6 @@ ttk.Button(ad_action,
                               padx=5,
                               pady=5,
                               sticky=(tk.W + tk.E))
-
 
 # Show the window
 root.mainloop()

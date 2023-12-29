@@ -5,11 +5,11 @@ Created on Wed Nov 22 11:38:04 2023
 @author: UMONS - 532807
 """
 
+import random
 import tkinter as tk
 from tkinter import ttk
 from pycaret.datasets import get_data
 from pycaret.time_series import *
-import random
 
 session_seed = random.randrange(1,1000)
 
@@ -27,12 +27,14 @@ mc.columnconfigure(0, weight=1)
 
 
 def selectAllTS():
+    """Method to select all time series models"""
     for i1 in models.keys():
         models[i1].set(True)
     models["ts_lar_cds_dt"].set(False)
     models["ts_par_cds_dt"].set(False)
 
 def unselectAllTS():
+    """Methode to unselect all time series models"""
     for i2 in models.keys():
         models[i2].set(False)
 
@@ -427,6 +429,7 @@ ts_info.grid(padx=5,
 ts_info.columnconfigure(1, weight=1)
 
 def run():
+    """Method to run all time series models"""
     models_to_compare = []
     if models["ts_naive"].get():
         models_to_compare.append("naive")
