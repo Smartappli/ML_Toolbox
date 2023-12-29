@@ -27,12 +27,12 @@ mc.grid(padx=10, pady=10, sticky=(tk.W + tk.E))
 mc.columnconfigure(0, weight=1)
 
 
-def selectAllClustering():
+def select_all_clustering():
     for i1 in models1.keys():
         models1[i1].set(True)
 
 
-def unselectAllClustering():
+def unselect_all_clustering():
     for i2 in models1.keys():
         models1[i2].set(False)
 
@@ -188,14 +188,14 @@ for i5 in range(4):
 
 ttk.Button(clustering_action,
            text="Select All",
-           command=selectAllClustering).grid(row=8,
+           command=select_all_clustering).grid(row=8,
                                              column=0,
                                              padx=5,
                                              pady=5,
                                              sticky=(tk.W + tk.E))
 ttk.Button(clustering_action,
            text="Unselect All",
-           command=unselectAllClustering).grid(row=8,
+           command=unselect_all_clustering).grid(row=8,
                                                column=1,
                                                padx=5,
                                                pady=5,
@@ -209,15 +209,16 @@ ttk.Button(clustering_action,
                               sticky=(tk.W + tk.E))
 
 
-def selectAllAD():
+def select_all_ad():
     """Method to select all anomaly detection models"""
     for i6 in models2.keys():
         models2[i6].set(True)
 
 
-def unselectAllAD():
+def unselect_all_ad():
     """Method to unselect all anomaly detection"""
     for i7 in models2.keys():
+        models2[i7].set(False)
         models2[i7].set(False)
 
 
@@ -406,14 +407,14 @@ for i10 in range(4):
 
 ttk.Button(ad_action,
            text="Select All",
-           command=selectAllAD).grid(row=3,
+           command=select_all_ad).grid(row=3,
                                      column=0,
                                      padx=5,
                                      pady=5,
                                      sticky=(tk.W + tk.E))
 ttk.Button(ad_action,
            text="Unselect All",
-           command=unselectAllAD).grid(row=3,
+           command=unselect_all_ad).grid(row=3,
                                        column=1,
                                        padx=5,
                                        pady=5,
