@@ -31,7 +31,7 @@ mc.columnconfigure(0, weight=1)
 
 def select_all_regression():
     """Method to select all regressinon models"""
-    for i1 in models1.keys():
+    for i1 in models1:
         models1[i1].set(True)
     models1["regression_lightgbm"].set(False)
     models1["regression_bagging"].set(False)
@@ -40,7 +40,7 @@ def select_all_regression():
 
 def unselect_all_regression():
     """Method to unselet all regression models"""
-    for i2 in models1.keys():
+    for i2 in models1:
         models1[i2].set(False)
 
 
@@ -513,14 +513,14 @@ ttk.Button(regression_action,
 
 def select_all_classification():
     """Method to select all classificatin models"""
-    for i6 in models2.keys():
+    for i6 in models2:
         models2[i6].set(True)
     models2["classification_lightgbm"].set(False)
 
 
 def unselect_all_classification():
     """Method to unselect all classification models"""
-    for i7 in models2.keys():
+    for i7 in models2:
         models2[i7].set(False)
 
 

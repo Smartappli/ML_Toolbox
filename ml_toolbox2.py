@@ -28,7 +28,7 @@ mc.columnconfigure(0, weight=1)
 
 def select_all_ts():
     """Method to select all time series models"""
-    for i1 in models.keys():
+    for i1 in models:
         models[i1].set(True)
     models["ts_lar_cds_dt"].set(False)
     models["ts_par_cds_dt"].set(False)
@@ -36,7 +36,7 @@ def select_all_ts():
 
 def unselect_all_ts():
     """Methode to unselect all time series models"""
-    for i2 in models.keys():
+    for i2 in models:
         models[i2].set(False)
 
 

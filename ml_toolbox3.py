@@ -28,12 +28,14 @@ mc.columnconfigure(0, weight=1)
 
 
 def select_all_clustering():
-    for i1 in models1.keys():
+    """Method to select all clustering models"""
+    for i1 in models1:
         models1[i1].set(True)
 
 
 def unselect_all_clustering():
-    for i2 in models1.keys():
+    """Method to unselect all clustering models"""
+    for i2 in models1:
         models1[i2].set(False)
 
 
@@ -211,13 +213,13 @@ ttk.Button(clustering_action,
 
 def select_all_ad():
     """Method to select all anomaly detection models"""
-    for i6 in models2.keys():
+    for i6 in models2:
         models2[i6].set(True)
 
 
 def unselect_all_ad():
     """Method to unselect all anomaly detection"""
-    for i7 in models2.keys():
+    for i7 in models2:
         models2[i7].set(False)
         models2[i7].set(False)
 
