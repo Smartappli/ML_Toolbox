@@ -1,4 +1,4 @@
 tk==0.1.0
-pycaret[analysis, models, tuners, parallel]=3.3.0
+pycaret[analysis, models, tuners, parallel]==3.3.0
 pillow>=10.3.0 # not directly required, pinned by Snyk to avoid a vulnerability
 werkzeug>=2.3.8 # not directly required, pinned by Snyk to avoid a vulnerability
